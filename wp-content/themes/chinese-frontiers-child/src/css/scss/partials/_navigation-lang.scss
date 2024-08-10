@@ -1,0 +1,49 @@
+.lang {
+  @apply relative uppercase pl-6 border-l-2 border-white text-xs;
+
+  &__current {
+    @apply text-white font-semibold flex items-center h-4 leading-none cursor-pointer pr-4 relative;
+
+    &:after {
+      content: '';
+      border-width: 5px 3px 0;
+      border-style: solid;
+      border-color: $white transparent transparent;
+
+      @apply w-0 h-0 absolute pointer-events-none right-0 top-1/2 transform -translate-y-1/2;
+    }
+
+    &:active {
+      &:after {
+        transform: translateY(calc(-50% - 1px));
+      }
+    }
+
+    &.active {
+      + nav {
+        @apply z-10 -translate-y-0;
+      }
+    }
+
+    &:not(.active) {
+      + nav {
+        @apply opacity-0 pointer-events-none transform -translate-y-3;
+      }
+    }
+  }
+
+  nav {
+    top: calc(100% + 8px);
+    width: calc(100% + 10px);
+
+    @apply absolute bg-white left-0 shadow-md transition-all duration-300 ease-out;
+
+    ul {
+      @apply flex flex-col;
+    }
+
+    a {
+      @apply text-blue block px-2 py-1 hover:bg-gray-100;
+    }
+  }
+}

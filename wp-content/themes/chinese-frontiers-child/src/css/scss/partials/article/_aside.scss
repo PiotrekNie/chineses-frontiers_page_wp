@@ -1,0 +1,28 @@
+.article {
+  &__aside {
+    height: fit-content;
+    counter-reset: aside;
+
+    nav {
+      li {
+        counter-increment: aside;
+
+        @apply xxl:pl-14 md:pl-8 pl-14 relative;
+
+        &:not(:last-child) {
+          @apply xxl:mb-8 md:mb-5 sm:mb-8 mb-4;
+        }
+
+        &:before {
+          position: absolute;
+          left: 0;
+          content: '0' counter(aside);
+        }
+
+        a {
+          @apply hover:text-blue hover:underline;
+        }
+      }
+    }
+  }
+}

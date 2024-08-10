@@ -1,0 +1,83 @@
+.hamburger {
+  @apply items-center justify-center flex w-10 p-0 relative;
+
+  i {
+    height: 3px;
+
+    @apply bg-blue w-6 block relative pointer-events-none transition-opacity duration-300 ease-out delay-400;
+
+    &:before,
+    &:after {
+      height: 3px;
+      content: '';
+
+      @apply bg-blue block absolute w-6;
+    }
+
+    &:before {
+      top: -8px;
+    }
+
+    &:after {
+      bottom: -8px;
+    }
+  }
+
+  .close-wrap {
+    transition:
+      margin 0.2s ease,
+      transform 0.2s ease 1s,
+      opacity 0.3s ease;
+    transform: translateX(-50%) translateY(-50%) translateZ(0);
+    transform-style: preserve-3d;
+
+    @apply absolute top-1/2 left-1/2 block w-5 h-5 overflow-hidden pointer-events-none;
+
+    .close-line {
+      left: 9px;
+      width: 2px;
+      border-radius: 5px;
+      transition:
+        opacity 0.2s ease,
+        background-color 0.2s ease;
+      animation-duration: 0.4s;
+      animation-timing-function: cubic-bezier(0.52, 0.01, 0.16, 1);
+      animation-fill-mode: forwards;
+      backface-visibility: hidden;
+
+      @apply absolute h-full bg-blue;
+
+      &-1 {
+        transform: translateY(0) translateX(0) rotate(-45deg);
+        animation-name: cross-left-close;
+        animation-delay: 0s;
+      }
+
+      &-2 {
+        transform: translateY(0) translateX(0) rotate(45deg);
+        animation-name: cross-right-close;
+        animation-delay: 0.06s;
+      }
+    }
+  }
+
+  &.active {
+    i {
+      @apply opacity-0 delay-none duration-150;
+    }
+
+    .close-line {
+      &-1 {
+        transform: translateY(-30px) translateX(30px) rotate(45deg);
+        animation-name: cross-right;
+        animation-delay: 0.29s;
+      }
+
+      &-2 {
+        transform: translateY(-30px) translateX(-30px) rotate(-45deg);
+        animation-name: cross-left;
+        animation-delay: 0.15s;
+      }
+    }
+  }
+}

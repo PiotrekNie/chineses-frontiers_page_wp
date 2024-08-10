@@ -1,0 +1,64 @@
+article {
+  .article {
+    &__content {
+      @apply text-gray leading-relaxed;
+
+      h2 {
+        @include fluid-type(16, 20, 480, 1200);
+        @apply text-blue md:ml-20 font-bold relative mb-12 md:pt-12 pt-8;
+
+        &:before {
+          height: 2px;
+          content: '';
+
+          @apply absolute top-16 xl:-left-20 md:-left-14 xl:w-16 md:w-10 bg-blue;
+        }
+      }
+
+      p {
+        &:first-of-type {
+          @apply font-bold xl:text-xl text-base sm:leading-relaxed;
+        }
+
+        &:not(:first-of-type) {
+          @apply sm:text-base text-sm font-normal sm:leading-relaxed;
+        }
+      }
+
+      a {
+        @apply underline hover:text-blue;
+      }
+
+      ul,
+      ol {
+        @apply mb-6 pl-6;
+
+        li {
+          &:not(:last-child) {
+            @apply mb-2;
+          }
+        }
+      }
+
+      ul {
+        list-style-type: disc;
+      }
+
+      ol {
+        list-style-type: decimal;
+      }
+
+      .table-of-contents {
+        + p {
+          @apply xl:text-xl text-base;
+        }
+      }
+
+      .wp-block {
+        &-image {
+          @apply mt-16 mb-0;
+        }
+      }
+    }
+  }
+}

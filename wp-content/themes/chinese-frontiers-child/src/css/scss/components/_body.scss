@@ -1,0 +1,12 @@
+body {
+  padding-top: 6.5rem;
+
+  @apply text-gray-800 font-sans bg-white;
+  @include fluid-type(14, 16, 480, 1200);
+
+  &.home {
+    &.logged-in {
+      background-image: none;
+    }
+  }
+}

@@ -1,0 +1,37 @@
+.key-visual {
+  min-height: 300px;
+
+  @apply relative z-10 overflow-hidden flex items-center;
+
+  @media screen and (min-width: $sm) {
+    min-height: 450px;
+  }
+
+  @media screen and (min-width: $xl) {
+    min-height: 450px;
+  }
+
+  &__text {
+    h1,
+    .h1 {
+      &.entry-title {
+        @apply text-white;
+      }
+
+      br {
+        @apply hidden md:block;
+      }
+    }
+  }
+
+  .attachment-post-thumbnail {
+    @apply absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 -z-3 pointer-events-none object-cover w-full h-full;
+  }
+
+  &:before {
+    content: '';
+    background: linear-gradient(45deg, rgba(0, 0, 0, 46%) 0%, rgba(0, 0, 0, 0%) 100%);
+
+    @apply absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none w-full h-full;
+  }
+}

@@ -1,0 +1,7 @@
+:-moz-selection {
+  @apply bg-blue bg-opacity-30;
+}
+
+::selection {
+  @apply bg-blue bg-opacity-30;
+}

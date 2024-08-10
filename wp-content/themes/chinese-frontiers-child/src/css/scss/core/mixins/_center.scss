@@ -1,0 +1,22 @@
+// Align
+@mixin transform($string) {
+  transform: $string;
+}
+
+@mixin center($xy: xy) {
+  @if $xy == xy {
+    inset: 50% auto auto 50%;
+
+    @include transform(translateX(-50%) translateY(-50%));
+  } @else if $xy == x {
+    right: auto;
+    left: 50%;
+
+    @include transform(translateX(-50%));
+  } @else if $xy == y {
+    top: 50%;
+    bottom: auto;
+
+    @include transform(translateY(-50%));
+  }
+}

@@ -1,0 +1,130 @@
+.sec-articles {
+  &__block {
+    @apply shadow-lg;
+
+    &--content {
+      @apply xl:py-8 pt-6 pb-10;
+
+      h3 {
+        @apply font-semibold;
+      }
+    }
+  }
+}
+
+.featured-posts {
+  &__block {
+    &--thumb {
+      a {
+        @apply block w-full h-full;
+
+        .wp-post-image {
+          @apply w-full h-full object-cover;
+        }
+      }
+    }
+
+    &--content {
+      @apply xl:py-6 pt-6 pb-10;
+
+      h3 {
+        @apply font-bold;
+      }
+    }
+  }
+}
+
+.sec-articles,
+.featured-posts {
+  &__block {
+    &--thumb {
+      @apply xl:h-64 sm:h-52 h-40 overflow-hidden relative w-full;
+
+      img {
+        transform: translate(-50%, -50%);
+
+        @apply absolute transition-transform duration-300 ease-out left-1/2 top-1/2 pointer-events-none;
+      }
+
+      .wp-post-image {
+        @apply object-cover w-full h-full;
+      }
+
+      a {
+        @apply block w-full h-full;
+
+        &:hover {
+          img {
+            transform: translate(-50%, -50%) scale(1.1);
+          }
+        }
+      }
+    }
+
+    &--content {
+      height: calc(100% - 13rem);
+
+      @apply xl:px-8 sm:px-6 px-4 flex flex-col;
+
+      @media screen and (min-width: $xl) {
+        height: calc(100% - 16rem);
+      }
+
+      a {
+        @apply hover:underline;
+      }
+
+      h3 {
+        @apply mb-5 text-blue;
+      }
+
+      p {
+        @apply text-gray-900;
+      }
+    }
+
+    &--tags {
+      @apply mb-4 flex flex-wrap;
+
+      li {
+        @apply whitespace-nowrap py-1 px-3 text-xs lowercase rounded-tl-md rounded-br-md mb-3;
+
+        &:not(:last-child) {
+          @apply mr-3;
+        }
+      }
+    }
+
+    &--footer {
+      @apply text-xs pt-7 mt-auto;
+    }
+  }
+}
+
+.sec-newsletter {
+  @apply xl:pt-20 pt-14;
+
+  h3 {
+    @apply text-blue block mb-4 text-xl;
+  }
+
+  &__img {
+    @apply relative overflow-hidden;
+
+    img {
+      max-height: 570px;
+
+      @include center;
+      @apply absolute w-full h-full object-cover;
+    }
+  }
+}
+
+.page-template-default {
+  .contact-bar {
+    h2 {
+      @include fluid-type(18, 24, 480, 1200);
+      @apply font-bold mb-0;
+    }
+  }
+}

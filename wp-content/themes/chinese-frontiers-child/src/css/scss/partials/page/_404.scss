@@ -1,0 +1,35 @@
+.error404 {
+  .key-visual {
+    &__text {
+      span {
+        &.title-404 {
+          @include fluid-type(80, 180, 480, 1200);
+          @apply leading-none md:mb-0 mb-6;
+        }
+      }
+
+      h1 {
+        @include fluid-type(24, 35, 480, 1200);
+        @apply font-bold leading-tight mb-6;
+      }
+
+      ul {
+        @apply text-xl font-semibold;
+
+        li {
+          @apply relative pl-5 block;
+
+          &:before {
+            content: '-';
+
+            @apply absolute top-0 left-0;
+          }
+        }
+      }
+    }
+  }
+
+  .attachment-post-thumbnail {
+    @apply opacity-20 md:opacity-100;
+  }
+}

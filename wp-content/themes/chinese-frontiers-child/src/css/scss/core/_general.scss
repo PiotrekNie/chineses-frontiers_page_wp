@@ -1,0 +1,16 @@
+a {
+  @apply no-underline;
+}
+
+@layer base {
+  b,
+  strong {
+    @apply font-bold;
+  }
+}
+
+@layer utilities {
+  small {
+    font-size: 70%;
+  }
+}

@@ -1,0 +1,106 @@
+.post {
+  &-object {
+    @apply mb-10;
+
+    &__text {
+      h2 {
+        @apply text-blue sm:pl-20 sm:mb-8 mb-4 relative;
+        @include fluid-type(18, 20, 480, 1200);
+
+        &:before {
+          content: '';
+
+          @apply sm:block hidden h-px absolute top-1/2 transform translate-y-1/2 left-0 md:w-16 w-11 bg-blue;
+        }
+      }
+
+      p {
+        font-size: 15px;
+
+        @apply leading-relaxed;
+
+        &:not(:last-child) {
+          @apply mb-6;
+        }
+      }
+
+      &--toggle {
+        font-size: 15px;
+
+        @apply opacity-0 transition-opacity duration-300 ease-out pt-6 pr-4;
+
+        &::-webkit-scrollbar {
+          @apply w-2;
+        }
+
+        &::-webkit-scrollbar-track {
+          @apply bg-gray-100 bg-opacity-50;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          @apply bg-blue;
+        }
+      }
+
+      &--content {
+        transition: max-height 300ms ease-out;
+
+        @apply max-h-0 relative;
+
+        &:not(.show) {
+          .post-object {
+            &__text {
+              &--toggle {
+                @apply pointer-events-none;
+              }
+            }
+          }
+        }
+
+        &.show {
+          max-height: 800px;
+
+          @apply pt-4;
+
+          &:before {
+            content: '';
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 100%) 0%, rgba(255, 255, 255, 0%) 100%);
+
+            @apply block w-full h-8 absolute top-4 left-1/2 transform -translate-x-1/2 pointer-events-none z-10;
+          }
+
+          .post-object {
+            &__text {
+              &--toggle {
+                @apply opacity-100 delay-200 overflow-y-auto max-h-full;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &__img {
+      max-height: 450px;
+
+      img {
+        @media screen and (min-width: $md) {
+          @apply h-full w-full object-cover;
+        }
+      }
+    }
+
+    ul,
+    ol {
+      @apply pl-6 mb-4 leading-relaxed;
+    }
+
+    ol {
+      @apply list-decimal;
+    }
+
+    ul {
+      @apply list-disc;
+    }
+  }
+}

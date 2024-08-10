@@ -1,0 +1,14 @@
+/*
+Theme Name: Chinese Frontiers Child Theme
+Description: This is a custom child theme for Chinese Frontiers
+Theme URI:   http://underscores.me/
+Author: n-media.pl
+Author URI:  https://n-media.pl/
+Template: chinese-frontiers
+Version: 1.1
+Requires PHP: 7.1
+*/
+
+.entry-content .woocommerce div.product .woocommerce-Tabs-panel {
+  display: block !important;
+}

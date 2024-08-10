@@ -1,0 +1,31 @@
+// Tailwind
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+// Core`
+@import 'scss/core/variables';
+@import 'scss/core/mixins';
+@import 'scss/core/html';
+@import 'scss/core/fonts';
+@import 'scss/core/keyframes';
+@import 'scss/core/general';
+
+// Partials
+@import 'scss/partials/buttons';
+@import 'scss/partials/navigation';
+@import 'scss/partials/navigation-mobile';
+@import 'scss/partials/navigation-lang';
+@import 'scss/partials/hamburger';
+@import 'scss/partials/titles';
+@import 'scss/partials/header';
+@import 'scss/partials/footer';
+@import 'scss/partials/section';
+@import 'scss/partials/key-visual';
+@import 'scss/partials/page/404';
+@import 'scss/partials/page/post';
+@import 'scss/partials/page/page';
+
+// Components
+@import 'scss/components/body';
+@import '~aos/src/sass/aos';

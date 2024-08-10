@@ -1,0 +1,240 @@
+.mobile-menu {
+  @apply bg-white bg-opacity-95 w-full h-screen left-0 top-0 fixed z-20 px-10 pt-28 overflow-y-auto transition-opacity duration-300 ease-out;
+
+  nav {
+    @apply w-full;
+
+    ul {
+      &#primary-menu {
+        @apply list-none m-0 p-0 block;
+
+        a {
+          @apply py-3 block;
+
+          + .sub-menu {
+            li {
+              @apply opacity-0 transform -translate-y-1/2;
+            }
+
+            .sub-menu {
+              @apply absolute top-0 pointer-events-none opacity-0;
+            }
+          }
+        }
+
+        li {
+          @apply block text-blue mx-0 text-2xl leading-7 w-full;
+
+          &.menu-item-has-children {
+            @apply relative w-full;
+
+            &:not(.active) {
+              &:after {
+                content: '';
+                border-width: 2px 2px 0 0;
+                border-style: solid;
+                border-color: $blue;
+
+                @apply absolute top-1/2 transform -translate-y-1/2 rotate-45 block ml-2 right-0 pointer-events-none h-3 w-3;
+              }
+            }
+
+            a {
+              + .sub-menu {
+                max-height: 0;
+
+                @apply pointer-events-none opacity-0 block w-full;
+              }
+
+              &.active {
+                max-height: 0;
+
+                @apply pointer-events-none opacity-0;
+
+                + .sub-menu {
+                  max-height: fit-content;
+
+                  @apply pointer-events-auto opacity-100;
+
+                  &.menu-opened {
+                    li {
+                      &:not(.active) {
+                        max-height: 0;
+
+                        @apply pointer-events-none opacity-0;
+                      }
+                    }
+                  }
+
+                  li {
+                    max-height: 1000px;
+
+                    @apply opacity-100 pointer-events-auto;
+
+                    &.menu-item-has-children {
+                      a {
+                        + .sub-menu {
+                          @apply pointer-events-none opacity-0;
+
+                          li {
+                            max-height: 0;
+
+                            @apply pointer-events-none opacity-0;
+                          }
+                        }
+
+                        &.active {
+                          + .sub-menu {
+                            @apply opacity-100 pointer-events-auto;
+
+                            &.menu-opened {
+                              li {
+                                &:not(.active) {
+                                  max-height: 0;
+
+                                  @apply pointer-events-none opacity-0;
+                                }
+                              }
+                            }
+
+                            li {
+                              max-height: 1000px;
+
+                              @apply opacity-100 pointer-events-auto;
+
+                              a {
+                                + .sub-menu {
+                                  @apply pointer-events-none opacity-0;
+
+                                  li {
+                                    @apply pointer-events-none opacity-0;
+                                  }
+                                }
+
+                                &.active {
+                                  + .sub-menu {
+                                    @apply opacity-100 pointer-events-auto;
+
+                                    li {
+                                      max-height: 1000px;
+
+                                      @apply opacity-100 pointer-events-auto;
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .menu-opened {
+      > li {
+        &:not(.active) {
+          @apply opacity-0 pointer-events-none;
+        }
+
+        &.active {
+          &:after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+  &__nav {
+    @apply h-full pt-9;
+  }
+
+  &__button {
+    transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
+
+    @apply absolute top-14 right-6 z-10 block w-12 h-12;
+
+    &:before {
+      margin: -25px 0 0 -25px;
+      content: '';
+
+      @apply bg-white pointer-events-none h-full w-full block left-1/2 top-1/2 absolute transform scale-0 transition-all duration-500 rounded-full;
+    }
+
+    .close-wrap {
+      transition:
+        margin 0.2s ease,
+        transform 0.2s ease 1s,
+        opacity 0.3s ease;
+      transform: translateX(-50%) translateY(-50%) translateZ(0);
+      transform-style: preserve-3d;
+
+      @apply absolute top-1/2 left-1/2 block w-5 h-5 overflow-hidden pointer-events-none;
+
+      .close-line {
+        left: 9px;
+        width: 2px;
+        border-radius: 5px;
+        transition:
+          opacity 0.2s ease,
+          background-color 0.2s ease;
+        animation-duration: 0.4s;
+        animation-timing-function: cubic-bezier(0.52, 0.01, 0.16, 1);
+        animation-fill-mode: forwards;
+        backface-visibility: hidden;
+
+        @apply absolute h-full bg-blue;
+
+        &-1 {
+          transform: translateY(0) translateX(0) rotate(-45deg);
+          animation-name: cross-left-close;
+          animation-delay: 0s;
+        }
+
+        &-2 {
+          transform: translateY(0) translateX(0) rotate(45deg);
+          animation-name: cross-right-close;
+          animation-delay: 0.06s;
+        }
+      }
+    }
+  }
+
+  &:not(.show) {
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  &.show {
+    pointer-events: auto;
+
+    .mobile-menu {
+      &__button {
+        &:before {
+          @apply shadow-xl transform scale-100;
+        }
+      }
+    }
+
+    .close-line {
+      &-1 {
+        transform: translateY(-30px) translateX(30px) rotate(45deg);
+        animation-name: cross-right;
+        animation-delay: 0.29s;
+      }
+
+      &-2 {
+        transform: translateY(-30px) translateX(-30px) rotate(-45deg);
+        animation-name: cross-left;
+        animation-delay: 0.15s;
+      }
+    }
+  }
+}

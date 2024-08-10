@@ -1,0 +1,40 @@
+.single {
+  .nav {
+    &-links {
+      @apply container max-w-fhd md:px-4 px-2 pt-20 grid md:grid-cols-2 md:gap-x-4 gap-4;
+    }
+
+    &-previous,
+    &-next {
+      @apply bg-gray-100 bg-opacity-50 md:px-11 px-6 md:py-9 py-6 flex items-center;
+
+      a {
+        @apply block;
+
+        span {
+          @apply block;
+        }
+      }
+    }
+
+    &-subtitle {
+      @apply uppercase mb-3;
+    }
+
+    &-title {
+      @apply font-bold text-blue xl:text-2xl sm:text-xl hover:underline;
+    }
+  }
+}
+
+.social {
+  a {
+    @apply h-8 w-8 flex items-center justify-center transition-all duration-300 ease-out hover:bg-gray-100;
+  }
+
+  li {
+    &:not(:last-child) {
+      @apply mr-2;
+    }
+  }
+}

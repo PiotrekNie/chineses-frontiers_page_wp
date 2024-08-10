@@ -1,0 +1,23 @@
+@keyframes cross-right {
+  100% {
+    transform: translateY(0) translateX(0) rotate(45deg);
+  }
+}
+
+@keyframes cross-left {
+  100% {
+    transform: translateY(0) translateX(0) rotate(-45deg);
+  }
+}
+
+@keyframes cross-right-close {
+  100% {
+    transform: translateY(22px) translateX(-22px) rotate(45deg);
+  }
+}
+
+@keyframes cross-left-close {
+  100% {
+    transform: translateY(22px) translateX(22px) rotate(-45deg);
+  }
+}

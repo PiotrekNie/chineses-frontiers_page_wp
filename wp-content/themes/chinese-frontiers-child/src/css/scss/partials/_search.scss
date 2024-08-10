@@ -1,0 +1,64 @@
+.site-header {
+  &__bottom {
+    .search-form,
+    .woocommerce-product-search {
+      @apply xl:w-60 lg:w-36 flex items-center relative;
+
+      input {
+        width: calc(100% - 2.4rem);
+        font-size: 15px;
+        transition:
+          opacity 300ms ease-out,
+          border-color 300ms ease-out;
+
+        @apply border-b border-transparent text-blue;
+
+        &:focus,
+        &:not(:placeholder-shown),
+        &:-webkit-autofill {
+          box-shadow: 0 0 0 2px rgba($blue, 0.05);
+
+          + label {
+            opacity: 0;
+          }
+        }
+      }
+
+      label {
+        @apply opacity-0 transition-opacity duration-300 ease-out absolute text-sm left-4 pointer-events-none text-blue;
+      }
+
+      &:hover {
+        label {
+          @apply opacity-30;
+        }
+
+        input {
+          @apply border-blue border-opacity-30;
+        }
+      }
+
+      button {
+        &[type='submit'] {
+          @apply p-2 hover:bg-gray-200 transition-all w-10 h-10;
+        }
+      }
+    }
+
+    .wp-block-search {
+      label {
+        @apply block mb-4;
+      }
+
+      button {
+        &[type='submit'] {
+          @apply bg-green;
+
+          &:hover {
+            @apply bg-green-hover;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+.site-footer {
+  @apply text-center md:text-left mt-24 relative;
+
+  &__nav {
+    @apply bg-gray-200 bg-opacity-20 py-7;
+
+    &--ul {
+      @apply md:mb-0 mb-6;
+
+      a {
+        @apply text-gray-300 text-sm hover:underline;
+      }
+
+      ul {
+        @apply flex flex-row md:flex-col flex-wrap justify-center;
+      }
+
+      li {
+        @apply md:mb-0 mb-2 md:mx-0 mx-3 md:mt-0 mt-2 leading-tight;
+
+        &:not(:last-child) {
+          @apply md:mb-1;
+        }
+      }
+    }
+
+    &--list {
+      column-count: 2;
+      column-gap: 1rem;
+
+      @apply text-left md:mb-0 mb-8;
+
+      @media screen and (min-width: $md) {
+        column-count: 1;
+      }
+
+      li {
+        @apply text-gray-300 text-sm block;
+
+        &:not(:last-child) {
+          @apply mb-1;
+        }
+      }
+    }
+  }
+
+  .social-menu {
+    a {
+      path {
+        fill: $blue;
+      }
+
+      &:hover {
+        path {
+          fill: $blue-hover;
+        }
+      }
+    }
+  }
+
+  h3 {
+    @apply text-sm text-gray-300 font-semibold mb-5 uppercase;
+  }
+
+  .btt {
+    @apply z-10 bg-white rounded-full shadow-xl absolute right-4 lg:-top-7 md:-top-20 -top-7 flex items-center justify-center w-14 h-14 lg:hover:shadow-sm transition-shadow duration-150 ease-out;
+
+    img {
+      @apply pointer-events-none;
+    }
+  }
+}
