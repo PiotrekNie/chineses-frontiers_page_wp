@@ -8,7 +8,7 @@
         @include fluid-type(18, 20, 480, 1200);
 
         &:before {
-          content: '';
+          content: "";
 
           @apply sm:block hidden h-px absolute top-1/2 transform translate-y-1/2 left-0 md:w-16 w-11 bg-blue;
         }
@@ -63,8 +63,12 @@
           @apply pt-4;
 
           &:before {
-            content: '';
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 100%) 0%, rgba(255, 255, 255, 0%) 100%);
+            content: "";
+            background: linear-gradient(
+              to bottom,
+              rgba(255, 255, 255, 100%) 0%,
+              rgb(255, 255, 255, 0%) 100%
+            );
 
             @apply block w-full h-8 absolute top-4 left-1/2 transform -translate-x-1/2 pointer-events-none z-10;
           }

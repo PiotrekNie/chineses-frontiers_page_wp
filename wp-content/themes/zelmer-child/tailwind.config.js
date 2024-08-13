@@ -2,7 +2,10 @@ const forms = require('@tailwindcss/forms');
 const colors = require('tailwindcss/colors');
 
 module.exports = {
-  content: ['./src/**/*.php', './template-parts/**/*.php', './*.php', './**/*.php', './inc/**/*.php', './inc/*.php', './src/**/*.js'],
+  purge: {
+    content: ['./src/**/*.php', './template-parts/**/*.php', './*.php', './**/*.php', './inc/**/*.php', './inc/*.php', './src/**/*.js'],
+  },
+  darkMode: false, // or 'media' or 'class'
   theme: {
     fontFamily: {
       sans: ['Open Sans', 'Arial', 'sans-serif'],
@@ -45,18 +48,14 @@ module.exports = {
           hover: '#003989',
           DEFAULT: '#0047A9',
         },
-        beige: {
-          DEFAULT: 'beige.500',
-          500: '#DAC9B1',
-        },
         gray: {
-          DEFAULT: '#333333',
           100: '#e7e7e7',
           200: '#CFCFCF',
           300: '#8C8C8C',
-          400: '#747474',
-          800: '#333333',
+          400: '#707070',
+          800: '#5B6770',
           900: '#212529',
+          DEFAULT: '#212529',
         },
         yellow: {
           DEFAULT: '#facc15',
@@ -123,5 +122,5 @@ module.exports = {
   variants: {
     extend: {},
   },
-  plugins: [forms, require('tailwindcss'), require('autoprefixer')],
+  plugins: [forms],
 };

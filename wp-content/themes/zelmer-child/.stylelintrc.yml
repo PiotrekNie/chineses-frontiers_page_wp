@@ -1,23 +1,24 @@
 {
   "plugins":
-    [
-      "stylelint-order",
-      "stylelint-prettier",
-      "stylelint-scss",
-      "stylelint-selector-bem-pattern",
-    ],
+    ["stylelint-order", "stylelint-prettier", "stylelint-selector-bem-pattern"],
   "extends": ["stylelint-config-standard", "stylelint-config-standard-scss"],
-  "defaultSeverity": "warning",
   "rules":
     {
       "block-no-empty": null,
-      "scss/at-extend-no-missing-placeholder": true,
+      "prettier/prettier": true,
+      "indentation": 2,
+      "string-quotes": "single",
       "no-duplicate-selectors": true,
+      "color-hex-case": "lower",
       "color-hex-length": "long",
       "color-named": "never",
       "selector-max-id": 1,
+      "selector-combinator-space-after": "always",
       "selector-attribute-quotes": "always",
+      "declaration-block-trailing-semicolon": "always",
       "declaration-no-important": true,
+      "declaration-colon-space-before": "never",
+      "declaration-colon-space-after": "always",
       "value-no-vendor-prefix": true,
       "function-url-quotes": "always",
       "function-url-scheme-disallowed-list": ["ftp", "/^http/", "/^https/"],
@@ -27,7 +28,7 @@
       "selector-no-vendor-prefix": true,
       "selector-max-universal": 1,
       "color-function-notation": "legacy",
-      "scss/at-if-no-null": null,
+      "max-line-length": [600, { "ignorePattern": ["/\\/\\*.*?\\*\\//"] }],
       "plugin/selector-bem-pattern":
         {
           "componentName": "[A-Z]+",

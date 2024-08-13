@@ -7,7 +7,7 @@ import ActiveHeader from './scripts/ActiveHeader';
 import MainForm from './scripts/Newsletter';
 import ReadMore from './scripts/ReadMore';
 import Checkbox from './scripts/Checkbox';
-import { ProductCompare } from './scripts/ProductCompare';
+import jQuery from 'jquery';
 
 class App {
   /**
@@ -80,15 +80,6 @@ class App {
    */
   private checkboxes = new Checkbox('input[type="checkbox"]');
 
-  /**
-   * Add products to compare
-   *
-   * @private
-   * @type {ProductCompare}
-   * @memberof App
-   */
-  private compare: ProductCompare = new ProductCompare('.compare-button');
-
   constructor() {
     this.initApp();
   }
@@ -105,8 +96,6 @@ class App {
     this.form.init();
     this.readMore.show();
     this.checkboxes.init();
-    this.compare.init();
-    this.compare.showButton();
 
     jQuery(document).on('yith-wcan-ajax-filtered', () => {
       this.scrollTo.init();
@@ -119,8 +108,6 @@ class App {
       this.form.init();
       this.readMore.show();
       this.checkboxes.init();
-      this.compare.init();
-      this.compare.showButton();
     });
   }
 }

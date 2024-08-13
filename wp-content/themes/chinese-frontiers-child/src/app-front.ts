@@ -1,4 +1,3 @@
-import './css/app-front.scss';
 import AOS from 'aos';
 
 class App {
