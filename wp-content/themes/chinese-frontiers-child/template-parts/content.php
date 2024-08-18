@@ -5,7 +5,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package zelmer
+ * @package chinese-frontiers
  */
 
 ?>
@@ -13,11 +13,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('article'); ?>>
   <?php $args = array(
     'delimeter' => '>',
-  );
+  ); ?>
 
-  woocommerce_breadcrumb($args); ?>
-
-  <header class="entry-header key-visual container max-w-fhd mb-10" data-aos="fade">
+  <header class="entry-header key-visual container max-w-fhd mb-10">
     <div class="flex justify-center w-full z-10 relative">
       <div class="md:w-10/12 w-full">
         <div class="key-visual__text md:w-7/12 w-full px-4 sm:px-6 md:px-0">
@@ -31,28 +29,13 @@
         </div>
       </div>
     </div>
-    <?php zelmer_post_thumbnail(); ?>
+    <?php chinese_frontiers_post_thumbnail(); ?>
   </header><!-- .entry-header -->
-  <div class="container max-w-fhd sm:px-4 px-2 flex flex-col md:flex-row md:justify-between items-center"
-    data-aos="fade">
-    <?php $tags = get_the_tags();
-    if ($tags) : ?>
-    <ul class="flex flex-wrap">
-      <?php foreach ($tags as $tag) :
-          $text_color = get_field('kolor_tagu', 'term_' . $tag->term_id); ?>
-      <li
-        class="border border-gray-300 whitespace-nowrap py-1 px-3 text-xs lowercase rounded-tl-md rounded-br-md xl:mb-0 mb-3 mr-3">
-        <?php echo $tag->name; ?>
-      </li>
-      <?php endforeach; ?>
-    </ul>
-    <?php endif; ?>
+  <div class="container max-w-fhd sm:px-4 px-2 flex flex-col md:flex-row md:justify-between items-center">
     <div
       class="entry-meta md:flex grid grid-cols-3 items-center text-sm text-gray-300 pt-4 md:pt-0 justify-center ml-auto">
       <div class="flex flex-col xl:flex-row">
-        <span class="font-semibold">
-          <?php zelmer_posted_on(); ?>
-        </span>
+        <?php chinese_frontiers_posted_on(); ?>
         <span class="mx-4 text-xs hidden xl:block">&#8226;</span>
         <span><?php echo reading_time(get_the_ID()); ?></span>
       </div>
@@ -90,7 +73,7 @@
     </div><!-- .entry-meta -->
   </div><!-- .entry-header -->
 
-  <div class="entry-content container max-w-fhd sm:px-4 px-2" data-aos="fade">
+  <div class="entry-content container max-w-fhd sm:px-4 px-2">
     <div class="xl:grid flex flex-col-reverse md:grid-cols-12 md:grid-rows-none grid-rows-2 xl:gap-4 gap-y-8 xl:pt-12">
       <div class="md:col-span-8 article__content">
         <?php
@@ -118,8 +101,8 @@
         ?>
       </div>
       <div class="md:col-span-4 flex w-full md:w-auto md:justify-end xl:border-0 border-b-2 border-gray-100">
-        <aside class="article__aside xl:shadow-xl xl:sticky top-16 bg-white xl:p-8 py-8 pr-8 xl:w-11/12 w-full">
-          <h3 class="text-green-400 font-bold text-blue h2"><?php _e('Spis treści', 'zelmer'); ?></h3>
+        <aside class="article__aside border border-gray rounded-lg xl:sticky top-16 xl:p-8 py-8 pr-8 xl:w-11/12 w-full">
+          <h3 class="text-green-400 font-bold h2"><?php _e('Contents', 'chinese-frontiers'); ?></h3>
           <nav class="xl:pt-8 md:pt-4 pt-8">
             <ol class="p-0 m-0 article__aside--list"></ol>
           </nav>

@@ -1,0 +1,17 @@
+.entry-content {
+  &:not(.product) {
+    p {
+      @apply mb-6;
+    }
+
+    ul {
+      @apply list-disc mb-12 pl-5;
+
+      li {
+        &:not(:last-child) {
+          @apply mb-2;
+        }
+      }
+    }
+  }
+}

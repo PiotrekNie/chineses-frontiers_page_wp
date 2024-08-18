@@ -1,29 +1,35 @@
 .cta {
-  @apply block text-center bg-transparent border w-full whitespace-nowrap uppercase font-semibold text-sm py-4 rounded-tl-md rounded-br-md transition-all duration-300 ease-out;
+  @apply flex items-center text-center whitespace-nowrap uppercase font-handwrite text-xl py-2 px-4 transition-all duration-300 ease-out rounded-2xl md:w-fit w-full justify-center;
+
+  span {
+    @apply pointer-events-none;
+  }
 
   &:not(.max-w-none) {
     @apply max-w-cta;
   }
 
+  &.has-icon {
+    @apply gap-3;
+  }
+
+  &.cta-dark {
+    @apply border border-gray;
+  }
+
   &.cta-white {
     @apply border-white text-white;
-
-    &:hover {
-      @apply hover:bg-white hover:bg-opacity-20;
-    }
   }
 
-  &.cta-blue {
-    @apply border-blue text-blue;
-
-    &:hover {
-      @apply hover:bg-blue hover:bg-opacity-20;
-    }
+  &.cta-red {
+    @apply text-red;
   }
 
-  &.cta-full {
-    &-blue {
-      @apply bg-blue text-white border border-blue hover:bg-blue-hover;
-    }
+  &.cta-outline {
+    @apply border-2 bg-transparent hover:bg-white hover:bg-opacity-20;
+  }
+
+  &.cta-primary {
+    @apply bg-yellow hover:bg-yellow-hover text-red border-none shadow-cta hover:shadow-cta-hover transition-all duration-150 ease-linear;
   }
 }

@@ -35,3 +35,8 @@ require_once CF_THEME_DIRECTORY . '/inc/upload-webpl-files.php';
  * Wordpress - allow to upload ico & svg files
  */
 require_once CF_THEME_DIRECTORY . '/inc/allow-upload-files.php';
+
+/**
+ * Wordpress - allow to upload ico & svg files
+ */
+require_once CF_THEME_DIRECTORY . '/inc/theme-logo.php';

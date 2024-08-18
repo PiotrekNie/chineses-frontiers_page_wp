@@ -1,0 +1,27 @@
+.swiper-navigation {
+  &-container {
+    @apply flex items-center gap-6;
+
+    > div {
+      @apply flex items-center justify-center w-6 h-6 cursor-pointer;
+
+      &.swiper-button-disabled {
+        @apply opacity-30 cursor-not-allowed;
+      }
+
+      img {
+        @apply pointer-events-none;
+      }
+    }
+  }
+}
+
+.swiper-scenes {
+  .swiper-slide {
+    @apply overflow-hidden rounded-lg;
+
+    img {
+      @apply w-full h-full object-cover;
+    }
+  }
+}

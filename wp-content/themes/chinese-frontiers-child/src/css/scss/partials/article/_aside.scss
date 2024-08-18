@@ -3,11 +3,13 @@
     height: fit-content;
     counter-reset: aside;
 
-    nav {
+    &--list {
+      @apply pl-0;
+
       li {
         counter-increment: aside;
 
-        @apply xxl:pl-14 md:pl-8 pl-14 relative;
+        @apply xxl:pl-14 md:pl-8 pl-14 relative block;
 
         &:not(:last-child) {
           @apply xxl:mb-8 md:mb-5 sm:mb-8 mb-4;
@@ -16,11 +18,11 @@
         &:before {
           position: absolute;
           left: 0;
-          content: '0' counter(aside);
+          content: "0" counter(aside);
         }
 
         a {
-          @apply hover:text-blue hover:underline;
+          @apply hover:underline;
         }
       }
     }

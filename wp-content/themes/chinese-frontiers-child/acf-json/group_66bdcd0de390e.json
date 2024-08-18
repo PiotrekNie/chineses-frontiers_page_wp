@@ -1,6 +1,6 @@
 {
     "key": "group_66bdcd0de390e",
-    "title": "Key Visual",
+    "title": "Section Key Visual",
     "fields": [
         {
             "key": "field_66bdcd0f62ab5",
@@ -40,7 +40,7 @@
             "maxlength": "",
             "rows": "",
             "placeholder": "",
-            "new_lines": ""
+            "new_lines": "wpautop"
         },
         {
             "key": "field_66bdcd7662ab7",
@@ -63,34 +63,32 @@
                     "label": "Add To Whislist",
                     "name": "add_to_whislist",
                     "aria-label": "",
-                    "type": "url",
+                    "type": "link",
                     "instructions": "",
-                    "required": 1,
+                    "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": ""
+                    "return_format": "array"
                 },
                 {
                     "key": "field_66bdcdc262ab9",
                     "label": "Play Free Prologue",
                     "name": "play_free_prologue",
                     "aria-label": "",
-                    "type": "url",
+                    "type": "link",
                     "instructions": "",
-                    "required": 1,
+                    "required": false,
                     "conditional_logic": 0,
                     "wrapper": {
                         "width": "",
                         "class": "",
                         "id": ""
                     },
-                    "default_value": "",
-                    "placeholder": "https:\/\/"
+                    "return_format": "array"
                 }
             ]
         },
@@ -173,16 +171,9 @@
     "location": [
         [
             {
-                "param": "page",
+                "param": "page_type",
                 "operator": "==",
-                "value": "6"
-            }
-        ],
-        [
-            {
-                "param": "page",
-                "operator": "==",
-                "value": "34"
+                "value": "front_page"
             }
         ]
     ],
@@ -195,5 +186,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723716484
+    "modified": 1723931472
 }

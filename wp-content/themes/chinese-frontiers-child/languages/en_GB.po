@@ -1,0 +1,115 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Chinese Frontiers\n"
+"POT-Creation-Date: 2024-08-18 22:23+0200\n"
+"PO-Revision-Date: 2024-08-18 22:24+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en_GB\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.4.4\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: .vscode\n"
+"X-Poedit-SearchPathExcluded-1: acf-json\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+
+#: footer.php:24
+#, php-format
+msgid "&copy; Copyrights %s"
+msgstr ""
+
+#: footer.php:26
+msgid "Cookie policy"
+msgstr ""
+
+#: footer.php:32
+msgid "Back to page top"
+msgstr "Back to page top"
+
+#: inc/article-options.php:23
+#, php-format
+msgid "%s reading time"
+msgstr "%s reading time"
+
+#: inc/theme-options.php:11
+msgid "Ustawienia szablonu"
+msgstr ""
+
+#: inc/theme-options.php:12
+msgid "Edycja szablonu"
+msgstr ""
+
+#: inc/theme-options.php:18
+msgid "Social Settings"
+msgstr ""
+
+#: inc/theme-options.php:19
+msgid "Social media"
+msgstr ""
+
+#: template-parts/content-none.php:25
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content.php:86
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: template-parts/content.php:107
+msgid "Spis treści"
+msgstr "Contents"
+
+#: template-parts/front-page/articles.php:45
+msgid "Więcej"
+msgstr ""
+
+#: template-parts/front-page/key-visual.php:30
+#: template-parts/front-page/key-visual.php:39
+msgid "Go to Steam page"
+msgstr ""
+
+#: template-parts/front-page/key-visual.php:50
+msgid "Scenes"
+msgstr "Scenes"
+
+#: template-parts/front-page/key-visual.php:53
+#: template-parts/front-page/key-visual.php:55
+msgid "Previous slide"
+msgstr ""
+
+#: template-parts/front-page/key-visual.php:58
+#: template-parts/front-page/key-visual.php:60
+msgid "Next slide"
+msgstr ""
+
+#: template-parts/newsletter-form.php:32
+msgid "ZAPISZ SIĘ"
+msgstr ""
+
+#: template-parts/newsletter-form.php:35
+msgid "Nie dostałeś od nas wiadomości? Sprawdź folder spam."
+msgstr ""
+
+#: template-parts/newsletter-form.php:42
+msgid "Cieszymy się, że chcesz być z nami w kontakcie!"
+msgstr ""
+
+#: template-parts/newsletter-form.php:43
+msgid ""
+"Wysłaliśmy link z potwierdzeniem zapisu na Twój adres\n"
+"        e-mail."
+msgstr ""
+
+#: template-parts/newsletter-form.php:45
+msgid "Potwierdź subskrypcję"
+msgstr ""
+
+#: template-parts/newsletter-form.php:46
+msgid "i przygotuj się na regularną porcję nowości!"
+msgstr ""

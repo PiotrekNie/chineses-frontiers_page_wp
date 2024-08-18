@@ -1,0 +1,23 @@
+.article {
+  .dynamic-block {
+    &.table-of-contents {
+      @apply pt-8 mb-0;
+
+      .h2 {
+        @apply text-blue mb-5;
+      }
+    }
+
+    &.info {
+      @apply mt-14 bg-blue text-white xxl:p-14 p-8 md:grid grid-cols-8 gap-x-10 items-center font-bold mb-20 rounded-tl-md rounded-br-md relative;
+
+      img {
+        @apply md:static absolute opacity-20 md:opacity-100 -left-2 -top-2;
+      }
+
+      p {
+        @apply mb-0 text-base sm:leading-relaxed;
+      }
+    }
+  }
+}

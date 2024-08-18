@@ -17,17 +17,19 @@ class NavigationHeader {
     let activeNavigation: Element[];
     let funcHideOnScroll: () => void;
     let funcHide: (ev: Event) => void;
-    const navigationContainer: Element[] = Array.from(document.querySelectorAll(`${this.navigation}`));
+    const navigationContainer: Element[] = Array.from(
+      document.querySelectorAll(`${this.navigation}`)
+    );
     const btn: Element[] = Array.from(document.querySelectorAll(this.button));
-    const siteHeader: HTMLElement = document.querySelector('.site-header');
+    const siteHeader: HTMLElement = document.querySelector(".site-header");
 
     if (!navigationContainer || !btn || !siteHeader) {
-      throw new Error('Missing element!');
+      throw new Error("Missing element!");
     }
 
     const funcHideEl: (el: HTMLElement) => void = (el: HTMLElement) => {
-      el.classList.remove('active');
-      el.parentElement.parentElement.classList.remove('menu-opened');
+      el.classList.remove("active");
+      el.parentElement.parentElement.classList.remove("menu-opened");
     };
 
     const funcHideAllNav: (elArray: Element[]) => void = async (elArray: Element[]) => {
@@ -35,17 +37,24 @@ class NavigationHeader {
 
       isActiveButton = null;
 
-      document.body.removeEventListener('click', funcHide);
+      document.body.removeEventListener("click", funcHide);
 
-      document.removeEventListener('scroll', funcHideOnScroll);
+      document.removeEventListener("scroll", funcHideOnScroll);
     };
 
     funcHide = async (ev?: Event) => {
       const target: Element = <Element>ev.target;
 
-      if (!activeNavigation[0]) return;
+      if (!activeNavigation[0]) {
+        // if (target instanceof HTMLElement && target?.href.)
 
-      if (!activeNavigation[0].previousElementSibling.classList.contains('active') || target.classList.contains('open-menu')) {
+        return;
+      }
+
+      if (
+        !activeNavigation[0].previousElementSibling.classList.contains("active") ||
+        target.classList.contains("open-menu")
+      ) {
         return;
       }
 
@@ -54,11 +63,11 @@ class NavigationHeader {
 
         activeNavigation = [];
 
-        document.body.removeEventListener('click', funcHide);
+        document.body.removeEventListener("click", funcHide);
 
         isActiveButton = null;
 
-        document.removeEventListener('scroll', funcHideOnScroll);
+        document.removeEventListener("scroll", funcHideOnScroll);
       }
     };
 
@@ -74,9 +83,9 @@ class NavigationHeader {
 
         ticking = true;
 
-        document.body.removeEventListener('click', funcHide);
+        document.body.removeEventListener("click", funcHide);
 
-        document.removeEventListener('scroll', funcHideOnScroll);
+        document.removeEventListener("scroll", funcHideOnScroll);
 
         isActiveButton = null;
       }
@@ -95,23 +104,23 @@ class NavigationHeader {
 
         funcHideAllNav(btn);
 
-        target.classList.toggle('active');
+        target.classList.toggle("active");
 
-        target.parentElement.parentElement.classList.toggle('menu-opened');
+        target.parentElement.parentElement.classList.toggle("menu-opened");
 
         activeNavigation = [keyElement, target];
 
-        document.body.addEventListener('click', funcHide);
+        document.body.addEventListener("click", funcHide);
 
-        if (keyElement.clientHeight + siteHeader.clientHeight < windowHeight) {
-          document.addEventListener('scroll', funcHideOnScroll);
+        if (keyElement && keyElement.clientHeight + siteHeader.clientHeight < windowHeight) {
+          document.addEventListener("scroll", funcHideOnScroll);
         }
 
         isActiveButton = target;
 
         if (!keyElement) return;
 
-        const formInput: HTMLInputElement = keyElement.querySelector('input');
+        const formInput: HTMLInputElement = keyElement.querySelector("input");
 
         if (!formInput) return;
 
@@ -119,7 +128,7 @@ class NavigationHeader {
 
         if (!close) return;
 
-        close.addEventListener('click', () => {
+        close.addEventListener("click", () => {
           funcHideAllNav(navigationContainer);
           funcHideAllNav(btn);
         });
@@ -133,7 +142,7 @@ class NavigationHeader {
     };
 
     [...btn].forEach((key: Element) => {
-      key.addEventListener('click', funcToogleNavigation);
+      key.addEventListener("click", funcToogleNavigation);
     });
   }
 }

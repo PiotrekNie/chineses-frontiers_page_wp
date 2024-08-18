@@ -1,0 +1,7 @@
+p {
+  @apply md:text-base text-sm leading-loose;
+
+  &:not(:last-child) {
+    @apply mb-4;
+  }
+}

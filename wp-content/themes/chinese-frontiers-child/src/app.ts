@@ -1,13 +1,12 @@
-import './css/app.scss';
-import ScrollTo from './scripts/ScrollTo';
-import Hamburger from './scripts/Hamburger';
-import NavigationHeader from './scripts/NavigationHeader';
-import Svg from './scripts/Svg';
-import ActiveHeader from './scripts/ActiveHeader';
-import MainForm from './scripts/Newsletter';
-import ReadMore from './scripts/ReadMore';
-import Checkbox from './scripts/Checkbox';
-import jQuery from 'jquery';
+import "./css/app.scss";
+import ScrollTo from "./scripts/ScrollTo";
+import Hamburger from "./scripts/Hamburger";
+import NavigationHeader from "./scripts/NavigationHeader";
+import Svg from "./scripts/Svg";
+import ActiveHeader from "./scripts/ActiveHeader";
+import ReadMore from "./scripts/ReadMore";
+import Checkbox from "./scripts/Checkbox";
+import jQuery from "jquery";
 
 class App {
   /**
@@ -26,7 +25,12 @@ class App {
    * @type {Hamburger}
    * @memberof App
    */
-  private hamburger: Hamburger = new Hamburger('.hamburger', '.menu-header-menu-bottom-container', '.mobile-menu', '.site-header__mobile', '.site-header');
+  private hamburger: Hamburger = new Hamburger(
+    ".hamburger",
+    ".menu-main-menu-container",
+    ".mobile-menu",
+    ".site-header"
+  );
 
   /**
    * Mobile search
@@ -35,7 +39,11 @@ class App {
    * @type {NavigationHeader}
    * @memberof App
    */
-  private navigation: NavigationHeader = new NavigationHeader('.open-menu a + .sub-menu', '.open-menu > a', '.site-header__search--close');
+  private navigation: NavigationHeader = new NavigationHeader(
+    "#languages-menu a + .sub-menu",
+    "#languages-menu li:not(.lang-item) > a",
+    ".site-header__search--close"
+  );
 
   /**
    * Transform img file to svg
@@ -44,7 +52,7 @@ class App {
    * @type {Svg}
    * @memberof App
    */
-  private convertSvg: Svg = new Svg('.convert-svg', /\.(svg)$/i);
+  private convertSvg: Svg = new Svg(".convert-svg", /\.(svg)$/i);
 
   /**
    * Shrink header on scroll
@@ -53,15 +61,7 @@ class App {
    * @type {ActiveHeader}
    * @memberof App
    */
-  private activeHeader: ActiveHeader = new ActiveHeader('.site-header');
-
-  /**
-   * Validate & submit newsletter form
-   *
-   * @private
-   * @memberof App
-   */
-  private form = new MainForm('#newsletter');
+  private activeHeader: ActiveHeader = new ActiveHeader(".site-header");
 
   /**
    * Newsletter form - read more text for agreemenst
@@ -70,7 +70,7 @@ class App {
    * @type {ReadMore}
    * @memberof App
    */
-  private readMore: ReadMore = new ReadMore('.label-readmore');
+  private readMore: ReadMore = new ReadMore(".label-readmore");
 
   /**
    * Change checkboxes value
@@ -93,11 +93,10 @@ class App {
     this.navigation.init();
     this.convertSvg.init();
     this.activeHeader.pageScroll();
-    this.form.init();
     this.readMore.show();
     this.checkboxes.init();
 
-    jQuery(document).on('yith-wcan-ajax-filtered', () => {
+    jQuery(document).on("yith-wcan-ajax-filtered", () => {
       this.scrollTo.init();
       this.hamburger.init();
       this.hamburger.copyNav();
@@ -105,11 +104,10 @@ class App {
       this.navigation.init();
       this.convertSvg.init();
       this.activeHeader.pageScroll();
-      this.form.init();
       this.readMore.show();
       this.checkboxes.init();
     });
   }
 }
 
-document.addEventListener('DOMContentLoaded', () => new App());
+document.addEventListener("DOMContentLoaded", () => new App());

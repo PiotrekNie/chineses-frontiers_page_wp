@@ -1,7 +1,10 @@
 <?php
 wp_nav_menu(
   array(
-    'menu' => 'Header Menu - Top',
-    'menu_id'        => 'secondary-menu',
+    'menu' => 'Main Menu',
+    'menu_id'        => 'main-menu',
+    'container' => 'nav',
+    'container_class' => 'menu-main-menu-container hidden lg:block mx-auto',
+    'container_id' => 'site-navigation'
   )
 );

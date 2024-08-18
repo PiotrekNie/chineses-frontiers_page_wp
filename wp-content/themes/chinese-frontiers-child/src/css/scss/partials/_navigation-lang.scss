@@ -1,49 +1,76 @@
 .lang {
-  @apply relative uppercase pl-6 border-l-2 border-white text-xs;
+  @apply relative uppercase font-semibold;
 
-  &__current {
-    @apply text-white font-semibold flex items-center h-4 leading-none cursor-pointer pr-4 relative;
-
-    &:after {
-      content: '';
-      border-width: 5px 3px 0;
-      border-style: solid;
-      border-color: $white transparent transparent;
-
-      @apply w-0 h-0 absolute pointer-events-none right-0 top-1/2 transform -translate-y-1/2;
+  nav {
+    a {
+      @apply flex items-center gap-2;
     }
+  }
 
-    &:active {
-      &:after {
-        transform: translateY(calc(-50% - 1px));
+  li {
+    a {
+      img {
+        @apply pointer-events-none;
       }
     }
+  }
+}
 
-    &.active {
-      + nav {
-        @apply z-10 -translate-y-0;
-      }
-    }
-
-    &:not(.active) {
-      + nav {
-        @apply opacity-0 pointer-events-none transform -translate-y-3;
+.home {
+  .lang {
+    nav {
+      a {
+        @apply md:text-white;
       }
     }
   }
 
-  nav {
-    top: calc(100% + 8px);
-    width: calc(100% + 10px);
-
-    @apply absolute bg-white left-0 shadow-md transition-all duration-300 ease-out;
-
-    ul {
-      @apply flex flex-col;
+  #languages-menu {
+    &.menu {
+      li {
+        &:after {
+          @media screen and (min-width: $md) {
+            border-color: $white transparent transparent;
+          }
+        }
+      }
     }
+  }
+}
 
-    a {
-      @apply text-blue block px-2 py-1 hover:bg-gray-100;
+#languages-menu {
+  @apply relative;
+
+  &.menu {
+    > li {
+      @apply relative;
+
+      &:after {
+        content: "";
+        border-width: 5px 3px 0;
+        border-style: solid;
+        border-color: $gray-800 transparent transparent;
+
+        @apply w-0 h-0 absolute pointer-events-none -right-3 top-1/2 transform -translate-y-1/2;
+      }
+
+      a {
+        span {
+          @apply pointer-events-none;
+        }
+      }
+    }
+  }
+
+  &.menu-opened {
+    .sub-menu {
+      @apply z-10 -translate-y-0 flex flex-col absolute top-full;
+    }
+  }
+
+  &:not(.menu-opened) {
+    .sub-menu {
+      @apply opacity-0 pointer-events-none transform -translate-y-3 hidden;
     }
   }
 }

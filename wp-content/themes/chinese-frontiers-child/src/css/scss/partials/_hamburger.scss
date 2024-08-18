@@ -4,14 +4,14 @@
   i {
     height: 3px;
 
-    @apply bg-blue w-6 block relative pointer-events-none transition-opacity duration-300 ease-out delay-400;
+    @apply bg-gray w-6 block relative pointer-events-none transition-opacity duration-300 ease-out delay-400;
 
     &:before,
     &:after {
       height: 3px;
-      content: '';
+      content: "";
 
-      @apply bg-blue block absolute w-6;
+      @apply bg-gray block absolute w-6;
     }
 
     &:before {
@@ -45,7 +45,7 @@
       animation-fill-mode: forwards;
       backface-visibility: hidden;
 
-      @apply absolute h-full bg-blue;
+      @apply absolute h-full bg-gray;
 
       &-1 {
         transform: translateY(0) translateX(0) rotate(-45deg);

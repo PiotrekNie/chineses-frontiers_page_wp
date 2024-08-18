@@ -1,0 +1,10 @@
+.type-page,
+.error404 {
+  .key-visual {
+    min-height: 300px;
+
+    @media screen and (min-width: $md) {
+      min-height: 400px;
+    }
+  }
+}

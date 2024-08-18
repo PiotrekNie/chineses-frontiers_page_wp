@@ -20,5 +20,5 @@ function reading_time($post_id)
   // ADD READING TIME OF TEXTS AND IMAGES
   $total_time = round($reading_time + $image_time);
 
-  return sprintf(__('%s min czytania', 'zelmer'), $total_time);
+  return sprintf(__('%s reading time', 'chinese-frontiers'), $total_time);
 }

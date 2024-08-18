@@ -63,10 +63,10 @@
   }
 
   .btt {
-    @apply z-10 bg-white rounded-full shadow-xl absolute right-4 lg:-top-7 md:-top-20 -top-7 flex items-center justify-center w-14 h-14 lg:hover:shadow-sm transition-shadow duration-150 ease-out;
+    @apply z-10 bg-beige border-[3px] border-gray rounded-full shadow-md absolute right-4 lg:-top-7 md:-top-20 -top-7 flex items-center justify-center w-14 h-14 lg:hover:shadow-sm transition-shadow duration-150 ease-out;
 
     img {
-      @apply pointer-events-none;
+      @apply pointer-events-none w-6 h-6;
     }
   }
 }
