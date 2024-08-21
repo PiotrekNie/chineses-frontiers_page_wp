@@ -24,7 +24,7 @@ if ($posts_query->have_posts()) : ?>
     <?php endif; ?>
   </div>
   <?php endif; ?>
-  <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-5">
+  <div class="grid md:grid-cols-4 sm:grid-cols-2 gap-5 md:pt-16 pt-8">
     <?php while ($posts_query->have_posts()) : $posts_query->the_post(); ?>
     <article class="sec-articles__block container" data-aos="fade">
       <div class="sec-articles__block--thumb">

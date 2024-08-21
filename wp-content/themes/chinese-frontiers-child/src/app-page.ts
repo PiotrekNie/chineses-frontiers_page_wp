@@ -2,6 +2,7 @@ import "./css/app-page.scss";
 import AOS from "aos";
 import FilterToogle from "./scripts/FilterToggle";
 import CategoryReadMore from "./scripts/CategoryReadMore";
+import jQuery from "jquery";
 
 class App {
   /**

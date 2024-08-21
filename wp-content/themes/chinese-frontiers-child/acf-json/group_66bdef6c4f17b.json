@@ -39,6 +39,22 @@
                     "append": ""
                 },
                 {
+                    "key": "field_66c4ff3fee2db",
+                    "label": "Social Link",
+                    "name": "social_link",
+                    "aria-label": "",
+                    "type": "link",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array"
+                },
+                {
                     "key": "field_66bdef9402833",
                     "label": "Section Description",
                     "name": "section_description",
@@ -194,7 +210,7 @@
                                         "class": "",
                                         "id": ""
                                     },
-                                    "return_format": "array",
+                                    "return_format": "id",
                                     "library": "all",
                                     "min_width": "",
                                     "min_height": "",
@@ -256,5 +272,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723724321
+    "modified": 1724266333
 }

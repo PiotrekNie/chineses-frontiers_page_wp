@@ -9,6 +9,10 @@ class App {
 
   private initApp(): void {
     this.nav.init();
+
+    jQuery(document).on("yith-wcan-ajax-filtered", () => {
+      this.nav.init();
+    });
   }
 }
 
