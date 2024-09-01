@@ -21,7 +21,8 @@ if ($contact_us): ?>
       <?php endif; ?>
     </div>
     <div class="col-span-5">
-      <?php echo do_shortcode( '[wpforms id="147"]'); ?>
+      <?php $contact_form = $contact_us[''];
+       echo do_shortcode(`[wpforms id="147"]`); ?>
     </div>
   </div>
 </section>
