@@ -4,7 +4,7 @@ $about_game = get_field('about_game', $front_page);
 $game_attributes = $about_game['game_attributes'];
 
 if ($about_game && $game_attributes) : ?>
-<section id="sec-2" class="md:pt-36 pt-12 container about-game">
+<section id="sec-2" class="section-about-game md:pt-36 pt-12 container about-game">
   <?php
         $section_title = $about_game['section_title'];
         $section_description = $about_game['section_description'];
@@ -37,7 +37,7 @@ if ($about_game && $game_attributes) : ?>
       if ($description) {echo $description;} ?>
         </div>
       </div>
-      <div class="col-span-5">
+      <div class="col-span-5 video-container">
         <?php $video_file = $attributes['video_file'];
       if ($video_file && $video_file['type'] == 'video'): ?>
         <video loop muted autoplay>

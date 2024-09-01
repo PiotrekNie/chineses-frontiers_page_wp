@@ -1,15 +1,5 @@
 .key-visual {
-  min-height: 300px;
-
-  @apply relative z-10 overflow-hidden flex items-center;
-
-  @media screen and (min-width: $sm) {
-    min-height: 450px;
-  }
-
-  @media screen and (min-width: $xl) {
-    min-height: 450px;
-  }
+  @apply max-w-[2560px] md:h-[calc(100vh_-_3rem)];
 
   &__text {
     h1,

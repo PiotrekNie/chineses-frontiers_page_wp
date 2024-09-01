@@ -1,5 +1,6 @@
 <?php $front_page = get_option('page_on_front'); ?>
-<section id="sec-1" class="flex justify-center z-10 relative overflow-hidden md:h-screen md:max-h-[768px] rounded-2xl"
+<section id="sec-1"
+  class="key-visual flex justify-center items-end z-10 relative overflow-hidden rounded-2xl p-4 min-h-[736px] md:max-h-[768px]"
   data-aos="fade">
   <div class="container md:grid flex flex-col grid-cols-12 gap-4 z-10 w-full md:py-16 py-10">
     <div class="md:col-span-7 md:flex md:items-end">
@@ -23,7 +24,7 @@
 
       <?php $cta_buttons = get_field('cta_buttons', $front_page);
       if ($cta_buttons) : ?>
-      <div class="py-7 flex flex-col md:flex-row gap-4 items-center">
+      <div class="md:py-12 py-6 flex flex-col md:flex-row gap-4 items-center">
         <?php $add_to_whislist = $cta_buttons['add_to_whislist'];
           if ($add_to_whislist):  ?>
         <a href="<?php echo $add_to_whislist['url'] ?>" target="_blank" class="cta cta-white cta-outline has-icon"

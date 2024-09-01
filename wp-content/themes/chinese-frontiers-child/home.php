@@ -75,7 +75,7 @@ Alphabetical descending', 'chinese-frontiers');  ?></option>
           <?php if (has_post_thumbnail()) {
                 the_post_thumbnail('large');
               } else {
-                echo "<img src='" .  get_stylesheet_directory_uri() . "/img/z.svg' alt='chinese-frontiers' class='placeholder' />";
+                echo "<img src='" .  get_stylesheet_directory_uri() . "/img/logo-chinese-small.webp' alt='chinese-frontiers' class='placeholder' />";
               } ?>
         </a>
       </div>

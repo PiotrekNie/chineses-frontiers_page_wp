@@ -5,7 +5,7 @@ if ($our_team): ?>
 
 <section id="sec-4" class="container md:grid flex flex-col items-center grid-cols-12 gap-4 md:pt-36 pt-12">
   <div class="col-span-6 flex justify-center">
-    <div class="w-10/12 mx-auto">
+    <div class="md:w-10/12 mx-auto">
       <?php $title = $our_team['section_title'];
       $social_link = $our_team['social_link'];
 
@@ -74,7 +74,7 @@ if ($our_team): ?>
       <?php endif; ?>
       <?php 
       $image = $director['image'];
-      if ($image) echo wp_get_attachment_image( $image , 'medium', '', array('class' => 'w-full h-full object-cover') ); ?>
+      if ($image) echo wp_get_attachment_image( $image , 'large', '', array('class' => 'w-full h-full object-cover') ); ?>
     </div>
     <?php endforeach;
     endif;

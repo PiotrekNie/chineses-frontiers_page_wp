@@ -1,5 +1,4 @@
-<?php $front_page = get_option('page_on_front'); ?>
-<?php
+<?php $front_page = get_option('page_on_front');
 $posts_args = array(
 'posts_per_page' => 4,
 'post_type' => 'post',
@@ -32,7 +31,7 @@ if ($posts_query->have_posts()) : ?>
           <?php if (has_post_thumbnail()) {
                 the_post_thumbnail('large');
               } else {
-                echo "<img src='" .  get_stylesheet_directory_uri() . "/img/z.svg' alt='zelmer' class='placeholder' />";
+                echo "<img src='" .  get_stylesheet_directory_uri() . "/img/logo-chinese-small.webp' alt='chinsese-frontiers' class='placeholder' />";
               } ?>
         </a>
       </div>

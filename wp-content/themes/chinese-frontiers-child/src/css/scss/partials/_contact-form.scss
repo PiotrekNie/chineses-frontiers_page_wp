@@ -1,0 +1,201 @@
+.wpforms {
+  &-container {
+    .wpforms {
+      &-form {
+        .wpforms-field-medium {
+          @apply max-w-none border-gray-400 rounded-lg w-full transition-shadow duration-300 ease-in rounded-lg text-left text-base;
+
+          &:focus {
+            box-shadow: 0 0 0 5px rgba($black, 0.15);
+          }
+
+          &[type="text"],
+          &[type="email"] {
+            @apply h-16;
+          }
+        }
+
+        textarea {
+          @apply h-40;
+        }
+      }
+
+      &-field {
+        @apply p-0;
+
+        .wpforms-field-row {
+          &:before,
+          &:after {
+            @apply hidden;
+          }
+
+          &-block {
+            @apply w-full m-0;
+          }
+        }
+
+        &-gdpr-checkbox {
+          .wpforms-field-label {
+            @apply hidden;
+          }
+
+          ul {
+            li {
+              @apply relative;
+
+              &.wpforms-selected {
+                label {
+                  &:before {
+                    content: url("../../img/check-mark.svg");
+                  }
+                }
+              }
+
+              input {
+                @apply absolute -z-3 pointer-events-none opacity-0;
+              }
+
+              label {
+                &:before {
+                  content: "";
+
+                  @apply border border-gray-400;
+                }
+              }
+            }
+          }
+
+          label {
+            @apply pl-8 relative block;
+
+            &:before {
+              content: "";
+
+              @apply flex items-center justify-center border border-gray-400 w-5 h-5 absolute left-0 top-0 pt-1;
+            }
+          }
+
+          .wpforms-error {
+            @apply ml-8;
+          }
+        }
+      }
+
+      &-submit-container {
+        @apply pt-6 flex gap-4 items-center;
+
+        button {
+          @apply flex items-center text-center whitespace-nowrap uppercase font-handwrite text-xl p-4 transition-all duration-300 ease-out rounded-2xl md:w-fit w-full justify-center bg-yellow hover:bg-yellow-hover text-red border-none shadow-cta hover:shadow-cta-hover transition-all duration-150 ease-linear;
+        }
+      }
+
+      &-error {
+        @apply text-red block text-sm italic;
+      }
+    }
+
+    label {
+      &.after {
+        @apply hidden;
+      }
+    }
+  }
+
+  &-confirmation {
+    &-container {
+      box-shadow: 0 0 0 3px rgba($gray-800, 0.3);
+
+      @apply text-center font-bold p-4 border border-gray rounded-lg text-2xl;
+    }
+  }
+
+  &-form {
+    @apply flex flex-col gap-4;
+  }
+
+  &-hidden {
+    @apply hidden;
+  }
+}
+
+#wpforms {
+  &-error {
+    &-noscript {
+      box-shadow: 0 0 0 3px rgba($red, 0.3);
+
+      @apply text-center text-red border border-red px-4 py-2 rounded-lg;
+    }
+  }
+}
+
+.section-contact {
+  .wpforms {
+    &-field {
+      &-container {
+        @apply flex flex-col grid-cols-1 gap-y-4;
+      }
+
+      &-email,
+      &-name,
+      &-textarea {
+        label {
+          @apply hidden;
+        }
+
+        .wpforms-field-description {
+          word-break: break-word;
+
+          @apply md:text-base text-sm m-0 md:py-8 break-words;
+        }
+      }
+    }
+  }
+}
+
+.contact-form {
+  .wpforms {
+    &-hidden {
+      @apply hidden;
+    }
+
+    &-field {
+      @apply mb-6;
+
+      &-email,
+      &-name,
+      &-textarea {
+        textarea {
+          @apply border-gray-400;
+        }
+
+        .wpforms-field-description {
+          word-break: break-word;
+
+          @apply md:text-base text-sm m-0 md:pt-8 break-words;
+        }
+      }
+
+      &-container {
+        input,
+        textarea {
+          @apply rounded-lg text-left w-full;
+        }
+      }
+    }
+
+    &-form {
+      input {
+        &.wpforms-field-medium {
+          &[type="text"],
+          &[type="email"] {
+            @apply text-left;
+          }
+        }
+      }
+    }
+
+    label {
+      @apply hidden;
+    }
+  }
+}

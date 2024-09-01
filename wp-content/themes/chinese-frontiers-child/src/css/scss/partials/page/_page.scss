@@ -1,8 +1,18 @@
-.post {
+.page {
   &-template {
     &-default {
+      .site-header {
+        &__top {
+          @apply md:top-8;
+        }
+      }
+
+      .site {
+        @apply pt-24;
+      }
+
       .entry-content {
-        @apply leading-relaxed text-gray;
+        @apply leading-relaxed;
 
         .article {
           &__content {

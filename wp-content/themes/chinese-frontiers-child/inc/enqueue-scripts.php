@@ -25,7 +25,7 @@ function content_hub_child_enqueue_styles()
    /**
    * If is any page template
    */
-  if (is_search() || is_page() || is_404() || is_home() || is_singular('post') || is_category() || is_tag()) {
+  if (!is_front_page() && (is_search() || is_page() || is_404() || is_home() || is_singular('post') || is_category() || is_tag())) {
     wp_enqueue_script('chinese-frontiers-page-scripts', get_stylesheet_directory_uri() . '/assets/js/app-page.js', array(), _S_VERSION, true);
 
     wp_enqueue_style('chinese-frontiers-page-styles', get_stylesheet_directory_uri() . '/assets/css/app-page.css', array('chinese-frontiers-main-style'), _S_VERSION);

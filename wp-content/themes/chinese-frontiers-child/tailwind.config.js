@@ -25,7 +25,7 @@ module.exports = {
       black: colors.black,
       gray: "#212529",
       blue: "#0047A9",
-      green: "#1DA89C",
+      green: "#aec65a",
       red: "#B3261E",
       yellow: "#EFB823",
       orange: "#fb923c",
@@ -45,11 +45,12 @@ module.exports = {
       colors: {
         green: {
           100: "#96b9ba",
+          500: "#aec65a",
           600: "#b4c851",
           700: "#009597",
           800: "#356466",
           hover: "#8f8c31",
-          DEFAULT: "#1DA89C",
+          DEFAULT: "#aec65a",
         },
         blue: {
           hover: "#003989",
