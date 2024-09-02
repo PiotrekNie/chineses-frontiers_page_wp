@@ -8,7 +8,3 @@ Template: chinese-frontiers
 Version: 1.1
 Requires PHP: 7.1
 */
-
-.entry-content .woocommerce div.product .woocommerce-Tabs-panel {
-  display: block !important;
-}

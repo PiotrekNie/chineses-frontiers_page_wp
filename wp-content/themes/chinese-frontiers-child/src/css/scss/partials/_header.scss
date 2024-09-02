@@ -16,10 +16,6 @@
     }
 
     .site-header {
-      &__top {
-        @apply md:translate-y-6;
-      }
-
       &__logo {
         @apply -translate-y-0;
       }
@@ -55,7 +51,7 @@
   }
 
   &__top {
-    @apply fixed md:top-0 -top-3 left-1/2 transform md:translate-y-20 translate-y-8 -translate-x-1/2 transition-transform ease-linear duration-300 w-full container;
+    @apply fixed md:top-0 -top-3 left-1/2 transform -translate-x-1/2 transition-transform ease-linear duration-300 w-full container;
   }
 
   &__mobile {

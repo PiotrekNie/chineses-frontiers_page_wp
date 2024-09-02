@@ -8,6 +8,8 @@
 
 <?php get_template_part('template-parts/front-page/section-team'); ?>
 
+<?php get_template_part('template-parts/front-page/section-presskit'); ?>
+
 <?php get_template_part('template-parts/front-page/section-contact'); ?>
 
 <?php get_footer(); ?>

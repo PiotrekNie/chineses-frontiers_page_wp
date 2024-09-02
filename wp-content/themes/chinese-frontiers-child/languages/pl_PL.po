@@ -1,0 +1,180 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Chinese Frontiers\n"
+"POT-Creation-Date: 2024-09-01 20:45+0200\n"
+"PO-Revision-Date: 2024-09-01 21:02+0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: pl_PL\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.5\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: chinese-frontiers\n"
+"X-Poedit-SearchPath-1: chinese-frontiers-child\n"
+"X-Poedit-SearchPathExcluded-0: chinese-frontiers-child/node_modules\n"
+
+#: chinese-frontiers-child/footer.php:24
+#, php-format
+msgid "&copy; Copyrights %s"
+msgstr "&copy; Copyrights %s"
+
+#: chinese-frontiers-child/footer.php:32
+msgid "Back to page top"
+msgstr "Wróć do góry"
+
+#: chinese-frontiers-child/home.php:21
+#, php-format
+msgid "%s article"
+msgstr ""
+
+#: chinese-frontiers-child/home.php:23 chinese-frontiers-child/home.php:25
+#, php-format
+msgid "%s articles"
+msgstr ""
+
+#: chinese-frontiers-child/home.php:30
+msgid "SORT BY"
+msgstr "OPCJE SORTOWANIA"
+
+#: chinese-frontiers-child/home.php:41
+msgid "Latest"
+msgstr "Najnowsze"
+
+#: chinese-frontiers-child/home.php:42
+msgid "The oldest"
+msgstr "Najstarsze"
+
+#: chinese-frontiers-child/home.php:43
+msgid ""
+"\n"
+"Alphabetically ascending"
+msgstr ""
+"\n"
+"Alfabetycznie od najnowszych"
+
+#: chinese-frontiers-child/home.php:45
+msgid ""
+"\n"
+"Alphabetical descending"
+msgstr ""
+"\n"
+"Alfabetycznie od najstarszych"
+
+#: chinese-frontiers-child/home.php:118
+msgid "Unfortunately, no news has been added yet"
+msgstr ""
+
+#: chinese-frontiers-child/inc/article-options.php:23
+#, php-format
+msgid "%s reading time"
+msgstr ""
+
+#: chinese-frontiers-child/inc/theme-options.php:11
+msgid "Ustawienia szablonu"
+msgstr ""
+
+#: chinese-frontiers-child/inc/theme-options.php:12
+msgid "Edycja szablonu"
+msgstr ""
+
+#: chinese-frontiers-child/inc/theme-options.php:18
+msgid "Social Settings"
+msgstr ""
+
+#: chinese-frontiers-child/inc/theme-options.php:19
+msgid "Social media"
+msgstr ""
+
+#: chinese-frontiers-child/template-parts/content-none.php:25
+#: chinese-frontiers/template-parts/content-none.php:24
+#, php-format
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: chinese-frontiers-child/template-parts/content-page.php:63
+#: chinese-frontiers/inc/template-tags.php:100
+#: chinese-frontiers/template-parts/content-page.php:39
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: chinese-frontiers-child/template-parts/content.php:84
+#: chinese-frontiers/template-parts/content.php:40
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: chinese-frontiers-child/template-parts/content.php:105
+msgid "Contents"
+msgstr ""
+
+#: chinese-frontiers-child/template-parts/front-page/articles.php:48
+msgid "Więcej"
+msgstr ""
+
+#: chinese-frontiers-child/template-parts/front-page/key-visual.php:31
+#: chinese-frontiers-child/template-parts/front-page/key-visual.php:40
+msgid "Go to Steam page"
+msgstr "Sprawdź na Steam"
+
+#: chinese-frontiers-child/template-parts/front-page/key-visual.php:51
+msgid "Scenes"
+msgstr "Sceny"
+
+#: chinese-frontiers-child/template-parts/front-page/key-visual.php:54
+#: chinese-frontiers-child/template-parts/front-page/key-visual.php:56
+msgid "Previous slide"
+msgstr "Poprzedni slajd"
+
+#: chinese-frontiers-child/template-parts/front-page/key-visual.php:59
+#: chinese-frontiers-child/template-parts/front-page/key-visual.php:61
+msgid "Next slide"
+msgstr "Następny Slajd"
+
+#: chinese-frontiers-child/template-parts/front-page/section-news.php:56
+msgid "View All News"
+msgstr "Zobacz wszystkie wiadomości"
+
+#: chinese-frontiers-child/template-parts/front-page/section-team.php:24
+#: chinese-frontiers-child/template-parts/front-page/section-team.php:68
+#, php-format
+msgid "Go to %s"
+msgstr "Idź do %s"
+
+#: chinese-frontiers-child/template-parts/newsletter-form.php:32
+msgid "ZAPISZ SIĘ"
+msgstr ""
+
+#: chinese-frontiers-child/template-parts/newsletter-form.php:35
+msgid "Nie dostałeś od nas wiadomości? Sprawdź folder spam."
+msgstr ""
+
+#: chinese-frontiers-child/template-parts/newsletter-form.php:42
+msgid "Cieszymy się, że chcesz być z nami w kontakcie!"
+msgstr ""
+
+#: chinese-frontiers-child/template-parts/newsletter-form.php:43
+msgid ""
+"Wysłaliśmy link z potwierdzeniem zapisu na Twój adres\n"
+"        e-mail."
+msgstr ""
+
+#: chinese-frontiers-child/template-parts/newsletter-form.php:45
+msgid "Potwierdź subskrypcję"
+msgstr ""
+
+#: chinese-frontiers-child/template-parts/newsletter-form.php:46
+msgid "i przygotuj się na regularną porcję nowości!"
+msgstr ""
+
+#: chinese-frontiers/footer.php:16
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: chinese-frontiers/inc/template-tags.php:83
+#, php-format
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""

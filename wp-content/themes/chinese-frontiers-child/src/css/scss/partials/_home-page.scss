@@ -1,0 +1,15 @@
+.home {
+  .site-header {
+    &__top {
+      @apply md:translate-y-20 translate-y-8;
+    }
+
+    &.active {
+      .site-header {
+        &__top {
+          @apply md:translate-y-6;
+        }
+      }
+    }
+  }
+}
