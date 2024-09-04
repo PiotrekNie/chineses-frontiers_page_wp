@@ -48,5 +48,22 @@ if ($about_game && $game_attributes) : ?>
     </div>
     <?php endforeach; ?>
   </div>
+  </div>
+  <?php $section_banner = $about_game['section_banner'];
+    if ($section_banner):  ?>
+  <div class="pt-28">
+    <div class="min-h-80 relative text-center flex items-center justify-center overflow-hidden rounded-2xl">
+      <?php $text = $section_banner['text'];
+      if ($text): ?>
+      <h3 class="h2 leading-relaxed font-handwrite text-white text-shadow-sm shadow-[#00000025]"><?php echo $text; ?>
+      </h3>
+      <?php endif; ?>
+      <?php $background = $section_banner['background'];
+        if ($background):
+        echo wp_get_attachment_image($background['ID'], 'full', '', array('class' => 'abs  w-full h-full object-cover -z-10 pointer-events-none absolute top-0 left-0'));
+        endif; ?>
+    </div>
+  </div>
+  <?php endif; ?>
 </section>
 <?php endif; ?>

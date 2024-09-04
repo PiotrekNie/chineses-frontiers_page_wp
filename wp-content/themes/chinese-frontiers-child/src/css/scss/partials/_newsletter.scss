@@ -1,167 +1,37 @@
 .newsletter {
-  @apply w-full md:ml-10 pt-8 relative;
-
-  @media screen and (min-width: $md) {
-    max-width: 457px;
-  }
-
-  input {
-    &[type='text'],
-    &[type='email'] {
-      @apply w-full text-center sm:h-14 focus:border-blue;
+  .mailerlite-form {
+    h3 {
+      @include fluid-type(24, 32, 480, 1200);
+      @apply font-handwrite mb-8;
     }
-  }
 
-  &__checkbox {
-    input {
-      @apply absolute pointer-events-none opacity-0 -z-3;
+    &-inputs {
+      @apply pt-8;
+    }
 
-      &:checked {
-        + .label-container {
-          label {
-            &:before {
-              content: url('../../img/check-mark.svg');
+    &-field {
+      label {
+        @apply hidden;
+      }
 
-              @apply bg-blue border-blue;
-            }
-          }
+      input {
+        &[type="text"],
+        &[type="email"] {
+          @apply max-w-none border-gray-400 w-full transition-shadow duration-300 ease-in rounded-lg text-left text-base h-16;
         }
       }
     }
 
-    label {
-      width: fit-content;
-
-      @apply pl-8 text-xs relative flex items-center cursor-default;
-
-      span {
-        @apply text-gray-900 block;
-      }
-
-      &:before {
-        content: '';
-
-        @apply flex items-center justify-center border border-gray-400 w-5 h-5 absolute left-0 top-1/2 transform -translate-y-1/2 pt-1;
-      }
-
-      button {
-        @apply absolute top-1/2 transform -translate-y-1/2 -right-4;
-
-        &:before {
-          width: 6px;
-          height: 6px;
-          content: '';
-          border-width: 0 2px 2px 0;
-          border-style: solid;
-          border-color: $blue;
-
-          @apply relative transform rotate-45 block ml-2 pointer-events-none;
-        }
-      }
+    .mailerlite-form-error {
+      @apply text-red block text-sm italic;
     }
 
-    &.show {
-      .newsletter {
-        &__checkbox {
-          button {
-            &:before {
-              transform: rotate(225deg);
-            }
-          }
-        }
-
-        &__collapse {
-          @apply max-h-40 pointer-events-auto;
-
-          &--content {
-            @apply delay-200 opacity-100 pointer-events-auto;
-          }
-        }
-      }
+    .mailerlite-subscribe-button-container {
+      @apply pt-6;
     }
 
-    &:not(:last-child) {
-      @apply mb-2;
-    }
-  }
-
-  &__checkboxes {
-    @apply py-9;
-  }
-
-  &__collapse {
-    transition: max-height 300ms ease-out;
-
-    @apply text-xs overflow-auto max-h-0;
-
-    ol {
-      @apply list-decimal list-outside my-2 pl-4;
-
-      li {
-        &:not(:last-child) {
-          @apply mb-2;
-        }
-      }
-    }
-
-    &--content {
-      @apply py-4 pr-2 opacity-0 pointer-events-none transition-opacity duration-300 ease-out;
-    }
-
-    &::-webkit-scrollbar {
-      @apply w-2;
-    }
-
-    &::-webkit-scrollbar-track {
-      @apply bg-gray-200 rounded-full;
-    }
-
-    &::-webkit-scrollbar-thumb {
-      @apply bg-blue rounded-full;
-    }
-  }
-
-  .form {
-    &__message {
-      &--invalid {
-        @apply text-red text-xs mt-1;
-      }
-    }
-  }
-
-  &__notify {
-    @apply text-gray-300;
-  }
-
-  &__thank-you {
-    top: 50%;
-    left: 50%;
-    transition:
-      opacity 300ms ease-out,
-      transform 300ms ease-out;
-    transform: translate(-50%, calc(-50% - 20px));
-
-    @apply absolute pointer-events-none text-center opacity-0;
-
-    p {
-      @apply mb-4;
-    }
-  }
-
-  .nulead-error {
-    &.show {
-      @apply text-sm text-red block mb-2;
-    }
-  }
-
-  &.send {
-    @apply opacity-0 pointer-events-none transition-opacity duration-300 ease-out;
-
-    + .newsletter {
-      &__thank-you {
-        @include center;
-        @apply opacity-100 pointer-events-auto;
-      }
+    .mailerlite-subscribe-submit {
+      @apply flex items-center text-center whitespace-nowrap uppercase font-handwrite text-xl p-4 rounded-2xl md:w-fit w-full justify-center bg-yellow hover:bg-yellow-hover text-red border-none shadow-cta hover:shadow-cta-hover transition-all duration-150 ease-linear;
     }
   }
 }

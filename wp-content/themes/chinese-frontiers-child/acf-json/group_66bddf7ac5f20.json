@@ -77,7 +77,7 @@
                     "min": 0,
                     "max": 0,
                     "collapsed": "",
-                    "button_label": "Dodaj wiersz",
+                    "button_label": "Add Row",
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
@@ -229,5 +229,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723723917
+    "modified": 1725398371
 }

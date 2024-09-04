@@ -23,13 +23,13 @@
 
           echo sprintf(__('&copy; Copyrights %s', 'chinese-frontiers'), $year);
           ?> | <a
-            href="<?php echo esc_attr( esc_url( get_privacy_policy_url() ) ); ?>"><?php esc_html_e( 'Cookie Policy', 'text-domain' ) ?></a>
+            href="<?php echo esc_attr( esc_url( get_privacy_policy_url() ) ); ?>"><?php echo sprintf(__('Cookie Policy', 'chinese-frontiers')) ?></a>
         </p>
       </div>
     </div>
   </div><!-- .site-info -->
   <a href="#page" class="btt"><img src="<?php echo get_stylesheet_directory_uri(); ?>/img/icon-arrow-top.svg"
-      alt="Back to top" aria-label="<?php echo sprintf(__('Back to page top', 'chinese-frointiers')) ?>"></a>
+      alt="Back to top" aria-label="<?php echo sprintf(__('Back to page top', 'chinese-frontiers')) ?>"></a>
 </footer><!-- #colophon -->
 
 </div><!-- #page -->

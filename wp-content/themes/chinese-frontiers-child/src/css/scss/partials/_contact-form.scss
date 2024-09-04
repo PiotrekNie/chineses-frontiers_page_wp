@@ -3,7 +3,7 @@
     .wpforms {
       &-form {
         .wpforms-field-medium {
-          @apply max-w-none border-gray-400 rounded-lg w-full transition-shadow duration-300 ease-in rounded-lg text-left text-base;
+          @apply max-w-none border-gray-400 w-full transition-shadow duration-300 ease-in rounded-lg text-left text-base;
 
           &:focus {
             box-shadow: 0 0 0 5px rgba($black, 0.15);
@@ -85,7 +85,7 @@
         @apply pt-6 flex gap-4 items-center;
 
         button {
-          @apply flex items-center text-center whitespace-nowrap uppercase font-handwrite text-xl p-4 transition-all duration-300 ease-out rounded-2xl md:w-fit w-full justify-center bg-yellow hover:bg-yellow-hover text-red border-none shadow-cta hover:shadow-cta-hover transition-all duration-150 ease-linear;
+          @apply flex items-center text-center whitespace-nowrap uppercase font-handwrite text-xl p-4 rounded-2xl md:w-fit w-full justify-center bg-yellow hover:bg-yellow-hover text-red border-none shadow-cta hover:shadow-cta-hover transition-all duration-150 ease-linear;
         }
       }
 

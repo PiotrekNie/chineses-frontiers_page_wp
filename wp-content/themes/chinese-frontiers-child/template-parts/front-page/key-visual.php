@@ -1,6 +1,6 @@
 <?php $front_page = get_option('page_on_front'); ?>
 <section id="sec-1"
-  class="key-visual flex justify-center items-end z-10 relative overflow-hidden rounded-2xl p-4 min-h-[736px] md:max-h-[768px]"
+  class="key-visual flex justify-center items-end z-10 relative overflow-hidden rounded-2xl p-4 min-h-[736px] md:max-h-[768px] mx-auto"
   data-aos="fade">
   <div class="container md:grid flex flex-col grid-cols-12 gap-4 z-10 w-full md:py-16 py-10">
     <div class="md:col-span-7 md:flex md:items-end">
@@ -48,7 +48,7 @@
       <?php $carousel = get_field('carousel', $front_page);
       if ($carousel): ?>
       <div class="flex justify-between items-center">
-        <h2><?php echo sprintf(__('Scenes', 'chinese-frontiers')); ?></h2>
+        <h2 class="h3"><?php echo sprintf(__('Scenes', 'chinese-frontiers')); ?></h2>
         <div class="swiper-navigation-container">
           <button class="swiper-button-prev"
             aria-label="<?php echo sprintf(__('Previous slide', 'chinese-frontiers')); ?>"><img

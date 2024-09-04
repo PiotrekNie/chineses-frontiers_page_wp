@@ -24,7 +24,7 @@
         },
         {
             "key": "field_66bdcd5c62ab6",
-            "label": "Section Description",
+            "label": "RODO Agreement",
             "name": "section_description",
             "aria-label": "",
             "type": "textarea",
@@ -38,6 +38,7 @@
             },
             "default_value": "",
             "maxlength": "",
+            "allow_in_bindings": 1,
             "rows": "",
             "placeholder": "",
             "new_lines": "wpautop"
@@ -111,7 +112,7 @@
             "min": 0,
             "max": 0,
             "collapsed": "",
-            "button_label": "Dodaj wiersz",
+            "button_label": "Add Row",
             "rows_per_page": 20,
             "sub_fields": [
                 {
@@ -186,5 +187,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723931472
+    "modified": 1725396504
 }

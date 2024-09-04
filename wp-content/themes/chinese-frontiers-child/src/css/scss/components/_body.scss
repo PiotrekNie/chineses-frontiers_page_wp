@@ -3,5 +3,5 @@ body {
   background-size: 182px;
   background-repeat: repeat;
 
-  @apply text-gray-800 font-sans bg-beige text-base md:p-6 px-2 pt-16 bg-blend-color-burn;
+  @apply text-gray-800 font-sans bg-beige text-base md:p-6 pl-2 pr-7 pt-16 bg-blend-color-burn leading-normal;
 }

@@ -40,7 +40,7 @@
                 },
                 {
                     "key": "field_66bdf37951f8c",
-                    "label": "Section Description",
+                    "label": "RODO Agreement",
                     "name": "section_description",
                     "aria-label": "",
                     "type": "textarea",
@@ -54,9 +54,33 @@
                     },
                     "default_value": "",
                     "maxlength": "",
+                    "allow_in_bindings": 1,
                     "rows": "",
                     "placeholder": "",
                     "new_lines": "wpautop"
+                },
+                {
+                    "key": "field_66d6098e093f7",
+                    "label": "Form ID",
+                    "name": "form_id",
+                    "aria-label": "",
+                    "type": "number",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "min": "",
+                    "max": "",
+                    "allow_in_bindings": 0,
+                    "placeholder": "",
+                    "step": "",
+                    "prepend": "",
+                    "append": ""
                 },
                 {
                     "key": "field_66bdf38a51f8d",
@@ -75,9 +99,9 @@
                     "layout": "table",
                     "pagination": 0,
                     "min": 0,
-                    "max": 0,
+                    "max": 4,
                     "collapsed": "",
-                    "button_label": "Dodaj wiersz",
+                    "button_label": "Add Row",
                     "rows_per_page": 20,
                     "sub_fields": [
                         {
@@ -129,5 +153,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1723724767
+    "modified": 1725396631
 }
