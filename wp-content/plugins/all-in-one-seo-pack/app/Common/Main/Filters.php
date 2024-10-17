@@ -54,11 +54,11 @@ abstract class Filters {
 		add_filter( 'genesis_detect_seo_plugins', [ $this, 'genesisTheme' ] );
 
 		// WeGlot compatibility.
-		if ( preg_match( '#(/default-sitemap\.xsl)$#i', $_SERVER['REQUEST_URI'] ) ) {
+		if ( isset( $_SERVER['REQUEST_URI'] ) && preg_match( '#(/default-sitemap\.xsl)$#i', sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ) ) ) {
 			add_filter( 'weglot_active_translation_before_treat_page', '__return_false' );
 		}
 
-		if ( preg_match( '#(\.xml)$#i', $_SERVER['REQUEST_URI'] ) ) {
+		if ( isset( $_SERVER['REQUEST_URI'] ) && preg_match( '#(\.xml)$#i', sanitize_text_field( wp_unslash( $_SERVER['REQUEST_URI'] ) ) ) ) {
 			add_filter( 'jetpack_boost_should_defer_js', '__return_false' );
 		}
 
@@ -347,7 +347,12 @@ abstract class Filters {
 		if ( $this->plugin === $pluginFile && ! empty( $actionLinks ) ) {
 			foreach ( $actionLinks as $key => $value ) {
 				$link = [
-					$key => '<a href="' . $value['url'] . '">' . $value['label'] . '</a>'
+					$key => sprintf(
+						'<a href="%1$s" %2$s target="_blank">%3$s</a>',
+						esc_url( $value['url'] ),
+						isset( $value['title'] ) ? 'title="' . esc_attr( $value['title'] ) . '"' : '',
+						$value['label']
+					)
 				];
 
 				$actions = 'after' === $position ? array_merge( $actions, $link ) : array_merge( $link, $actions );

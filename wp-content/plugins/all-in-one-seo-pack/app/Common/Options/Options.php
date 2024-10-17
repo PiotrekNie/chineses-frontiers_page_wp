@@ -73,7 +73,11 @@ TEMPLATE
 				'all'      => [ 'type' => 'boolean', 'default' => true ],
 				'included' => [ 'type' => 'array', 'default' => [ 'category', 'post_tag', 'product_cat', 'product_tag' ] ],
 			],
-			'uninstall'        => [ 'type' => 'boolean', 'default' => false ]
+			'uninstall'        => [ 'type' => 'boolean', 'default' => false ],
+			'emailSummary'     => [
+				'enable'     => [ 'type' => 'boolean', 'default' => true ],
+				'recipients' => [ 'type' => 'array', 'default' => [] ]
+			]
 		],
 		'sitemap'          => [
 			'general' => [
@@ -314,7 +318,8 @@ TEMPLATE
 				'blockArgs'                    => [
 					'enable'        => [ 'type' => 'boolean', 'default' => false ],
 					'logsRetention' => [ 'type' => 'string', 'default' => '{"label":"1 week","value":"week"}' ]
-				]
+				],
+				'removeCategoryBase'           => [ 'type' => 'boolean', 'default' => false ]
 			],
 			'archives' => [
 				'author' => [
@@ -531,6 +536,13 @@ TEMPLATE
 		$this->defaults['deprecated']['tools']['blocker']['custom']['referer']['default']      = implode( "\n", aioseo()->badBotBlocker->getRefererList() );
 
 		$this->defaults['searchAppearance']['global']['schema']['organizationLogo']['default'] = aioseo()->helpers->getSiteLogoUrl() ? aioseo()->helpers->getSiteLogoUrl() : '';
+
+		$this->defaults['advanced']['emailSummary']['recipients']['default'] = [
+			[
+				'email'     => get_bloginfo( 'admin_email' ),
+				'frequency' => 'monthly',
+			]
+		];
 	}
 
 	/**
@@ -587,6 +599,10 @@ TEMPLATE
 		$logsRetention     = isset( $options['searchAppearance']['advanced']['blockArgs']['logsRetention'] ) ? $options['searchAppearance']['advanced']['blockArgs']['logsRetention'] : null;
 		$oldLogsRetention  = aioseo()->options->searchAppearance->advanced->blockArgs->logsRetention;
 
+		// Remove category base.
+		$removeCategoryBase    = isset( $options['searchAppearance']['advanced']['removeCategoryBase'] ) ? $options['searchAppearance']['advanced']['removeCategoryBase'] : null;
+		$removeCategoryBaseOld = aioseo()->options->searchAppearance->advanced->removeCategoryBase;
+
 		$options = $this->maybeRemoveUnfilteredHtmlFields( $options );
 
 		$this->init();
@@ -594,6 +610,8 @@ TEMPLATE
 		if ( ! is_array( $options ) ) {
 			return;
 		}
+
+		$this->sanitizeEmailSummary( $options );
 
 		// First, recursively replace the new options into the cached state.
 		// It's important we use the helper method since we want to replace populated arrays with empty ones if needed (when a setting was cleared out).
@@ -677,8 +695,43 @@ TEMPLATE
 			aioseo()->searchStatistics->sitemap->maybeSync( $oldSitemapOptions, $sitemapOptions );
 		}
 
+		if (
+			null !== $removeCategoryBase &&
+			$removeCategoryBase !== $removeCategoryBaseOld
+		) {
+			aioseo()->options->flushRewriteRules();
+		}
+
 		// This is required in order for the Pro options to be refreshed before they save data again.
 		$this->refresh();
+	}
+
+	/**
+	 * Sanitizes the `emailSummary` option.
+	 *
+	 * @since 4.7.2
+	 *
+	 * @param  array $options All options, passed by reference.
+	 * @return void
+	 */
+	private function sanitizeEmailSummary( &$options ) {
+		foreach ( ( $options['advanced']['emailSummary']['recipients'] ?? [] ) as $k => &$recipient ) {
+			$recipient['email'] = is_email( $recipient['email'] );
+
+			// Remove empty emails.
+			if ( empty( $recipient['email'] ) ) {
+				unset( $options['advanced']['emailSummary']['recipients'][ $k ] );
+
+				continue;
+			}
+
+			// Remove duplicate emails.
+			$emails = array_column( $options['advanced']['emailSummary']['recipients'], 'email' );
+			$emails = array_count_values( $emails );
+			if ( $emails[ $recipient['email'] ] > 1 ) {
+				unset( $options['advanced']['emailSummary']['recipients'][ $k ] );
+			}
+		}
 	}
 
 	/**

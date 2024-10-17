@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitdb0c8ce6caf76689ddefd0d9ab3cc8bc
+class ComposerStaticInit321776f470b5d74633ae9be4fb0b126d
 {
     public static $prefixLengthsPsr4 = array (
         'A' => 
@@ -52,6 +52,7 @@ class ComposerStaticInitdb0c8ce6caf76689ddefd0d9ab3cc8bc
         'AIOSEO\\Plugin\\Common\\Api\\Analyze' => __DIR__ . '/../..' . '/app/Common/Api/Analyze.php',
         'AIOSEO\\Plugin\\Common\\Api\\Api' => __DIR__ . '/../..' . '/app/Common/Api/Api.php',
         'AIOSEO\\Plugin\\Common\\Api\\Connect' => __DIR__ . '/../..' . '/app/Common/Api/Connect.php',
+        'AIOSEO\\Plugin\\Common\\Api\\EmailSummary' => __DIR__ . '/../..' . '/app/Common/Api/EmailSummary.php',
         'AIOSEO\\Plugin\\Common\\Api\\Integrations\\Semrush' => __DIR__ . '/../..' . '/app/Common/Api/Integrations/Semrush.php',
         'AIOSEO\\Plugin\\Common\\Api\\Integrations\\WpCode' => __DIR__ . '/../..' . '/app/Common/Api/Integrations/WpCode.php',
         'AIOSEO\\Plugin\\Common\\Api\\Migration' => __DIR__ . '/../..' . '/app/Common/Api/Migration.php',
@@ -74,6 +75,10 @@ class ComposerStaticInitdb0c8ce6caf76689ddefd0d9ab3cc8bc
         'AIOSEO\\Plugin\\Common\\Breadcrumbs\\Tags' => __DIR__ . '/../..' . '/app/Common/Breadcrumbs/Tags.php',
         'AIOSEO\\Plugin\\Common\\Breadcrumbs\\Widget' => __DIR__ . '/../..' . '/app/Common/Breadcrumbs/Widget.php',
         'AIOSEO\\Plugin\\Common\\Core\\Core' => __DIR__ . '/../..' . '/app/Common/Core/Core.php',
+        'AIOSEO\\Plugin\\Common\\EmailReports\\EmailReports' => __DIR__ . '/../..' . '/app/Common/EmailReports/EmailReports.php',
+        'AIOSEO\\Plugin\\Common\\EmailReports\\Mail' => __DIR__ . '/../..' . '/app/Common/EmailReports/Mail.php',
+        'AIOSEO\\Plugin\\Common\\EmailReports\\Summary\\Content' => __DIR__ . '/../..' . '/app/Common/EmailReports/Summary/Content.php',
+        'AIOSEO\\Plugin\\Common\\EmailReports\\Summary\\Summary' => __DIR__ . '/../..' . '/app/Common/EmailReports/Summary/Summary.php',
         'AIOSEO\\Plugin\\Common\\Help\\Help' => __DIR__ . '/../..' . '/app/Common/Help/Help.php',
         'AIOSEO\\Plugin\\Common\\ImportExport\\Helpers' => __DIR__ . '/../..' . '/app/Common/ImportExport/Helpers.php',
         'AIOSEO\\Plugin\\Common\\ImportExport\\ImportExport' => __DIR__ . '/../..' . '/app/Common/ImportExport/ImportExport.php',
@@ -106,6 +111,7 @@ class ComposerStaticInitdb0c8ce6caf76689ddefd0d9ab3cc8bc
         'AIOSEO\\Plugin\\Common\\Integrations\\Semrush' => __DIR__ . '/../..' . '/app/Common/Integrations/Semrush.php',
         'AIOSEO\\Plugin\\Common\\Integrations\\WpCode' => __DIR__ . '/../..' . '/app/Common/Integrations/WpCode.php',
         'AIOSEO\\Plugin\\Common\\Main\\Activate' => __DIR__ . '/../..' . '/app/Common/Main/Activate.php',
+        'AIOSEO\\Plugin\\Common\\Main\\CategoryBase' => __DIR__ . '/../..' . '/app/Common/Main/CategoryBase.php',
         'AIOSEO\\Plugin\\Common\\Main\\Filters' => __DIR__ . '/../..' . '/app/Common/Main/Filters.php',
         'AIOSEO\\Plugin\\Common\\Main\\Head' => __DIR__ . '/../..' . '/app/Common/Main/Head.php',
         'AIOSEO\\Plugin\\Common\\Main\\Main' => __DIR__ . '/../..' . '/app/Common/Main/Main.php',
@@ -247,6 +253,7 @@ class ComposerStaticInitdb0c8ce6caf76689ddefd0d9ab3cc8bc
         'AIOSEO\\Plugin\\Common\\Traits\\Helpers\\DateTime' => __DIR__ . '/../..' . '/app/Common/Traits/Helpers/DateTime.php',
         'AIOSEO\\Plugin\\Common\\Traits\\Helpers\\Deprecated' => __DIR__ . '/../..' . '/app/Common/Traits/Helpers/Deprecated.php',
         'AIOSEO\\Plugin\\Common\\Traits\\Helpers\\Language' => __DIR__ . '/../..' . '/app/Common/Traits/Helpers/Language.php',
+        'AIOSEO\\Plugin\\Common\\Traits\\Helpers\\Numbers' => __DIR__ . '/../..' . '/app/Common/Traits/Helpers/Numbers.php',
         'AIOSEO\\Plugin\\Common\\Traits\\Helpers\\PostType' => __DIR__ . '/../..' . '/app/Common/Traits/Helpers/PostType.php',
         'AIOSEO\\Plugin\\Common\\Traits\\Helpers\\Request' => __DIR__ . '/../..' . '/app/Common/Traits/Helpers/Request.php',
         'AIOSEO\\Plugin\\Common\\Traits\\Helpers\\Shortcodes' => __DIR__ . '/../..' . '/app/Common/Traits/Helpers/Shortcodes.php',
@@ -408,10 +415,10 @@ class ComposerStaticInitdb0c8ce6caf76689ddefd0d9ab3cc8bc
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitdb0c8ce6caf76689ddefd0d9ab3cc8bc::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitdb0c8ce6caf76689ddefd0d9ab3cc8bc::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitdb0c8ce6caf76689ddefd0d9ab3cc8bc::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitdb0c8ce6caf76689ddefd0d9ab3cc8bc::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit321776f470b5d74633ae9be4fb0b126d::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit321776f470b5d74633ae9be4fb0b126d::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit321776f470b5d74633ae9be4fb0b126d::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit321776f470b5d74633ae9be4fb0b126d::$classMap;
 
         }, null, ClassLoader::class);
     }
